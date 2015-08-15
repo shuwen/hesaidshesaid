@@ -9,11 +9,11 @@ var WEB_PORT = 9000;
 var APP_DIR = 'app';
 
 // jshint files
-gulp.task('jshint', function() {
-    gulp.src(['test/**/*.js'])
-        .pipe(jshint())
-        .pipe(jshint.reporter());
-});
+// gulp.task('jshint', function() {
+//     gulp.src(['test/**/*.js'])
+//         .pipe(jshint())
+//         .pipe(jshint.reporter());
+// });
 
 var lrs = lrserver();
 
@@ -38,7 +38,7 @@ gulp.task('http-server', function() {
 gulp.task('server', function() {
     gulp.run('lr-server');
 
-    var watchFiles = ['app/**/*.html', 'app/js/**/*.js'];
+    var watchFiles = ['app/**/*.html', 'app/**/*.js'];
     gulp.watch(watchFiles, function(e) {
         console.log('Files changed. Reloading...');
         gulp.src(watchFiles)
@@ -49,6 +49,6 @@ gulp.task('server', function() {
 });
 
 gulp.task('default', function() {
-    gulp.run('jshint', 'server');
+    gulp.run('server');
 });
 
