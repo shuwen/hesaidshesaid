@@ -1,4 +1,7 @@
 @import "settings";
+@import "compass";
+@import "_variables.scss";
+@import "_mixins.scss";
 // @import "foundation";
 
 // Or selectively include components
@@ -38,3 +41,228 @@
 //   "foundation/components/type",
 //   "foundation/components/offcanvas",
 //   "foundation/components/visibility";
+
+/*======================================
+COMPONENTS
+======================================*/
+
+/*=== Buttons ===*/
+
+a.primary_button {
+    display: inline-block;
+    background-color: #000;
+    text-decoration: none;
+    padding: 10px 50px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/*======================================
+HEADER
+======================================*/
+
+.header_container {
+    display: block;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    text-align: center;
+    width: 100%;
+    background-color: rgba($black, 0);
+
+    h1 {
+    	color: $white;
+    }
+}
+
+/*======================================
+CHOOSE YOUR ACT
+======================================*/
+
+video#bgvid {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -100;
+	@include transform(translateX(-50%) translateY(-50%));
+	// background: url(polina.jpg) no-repeat;
+	background-size: cover;
+}
+
+.intro_container {
+    display: block;
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    text-align: center;
+    padding: 0px 200px;
+    z-index: 99;
+
+    h1 {
+    	color: $black;
+    }
+
+    p {
+	    font-size: 30px;
+	    line-height: 38px;
+    	color: $white;
+    }
+}
+
+.intros {
+	position: fixed;
+	top: 0;
+	width: 100%;
+    display: block;
+    height: 100%;
+
+	.intro_left {
+		width: 50%;
+		left: 0;
+		height: 100%;
+		position: absolute;
+
+		&:before {
+			@include overlay(rgba(68,135,199,.4));
+		}
+	}
+
+	.intro_right {
+		width: 50%;
+		right: 0;
+		height: 100%;
+		position: absolute;
+
+		&:before {
+			@include overlay(rgba(235,93,75,.4));
+		}
+	}
+}
+
+/*======================================
+CHOOSE YOUR STORY
+======================================*/
+
+.cys_split_container {
+    position: relative;
+    overflow-x: hidden;
+    min-height: 100%;
+    width: 100%;
+}
+
+.cys_side {
+	height: 100%;
+	position: fixed;
+	top: 0;
+	background-size: cover;
+	background-position: 60% 0;
+
+	a {
+	    display: block;
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	    z-index: 9999;
+	}
+
+	&.cys_he_container {
+		width: 50%;
+		left: 0;
+
+		&:before {
+			@include overlay(rgba(68,135,199,1));
+			@include transition(all .5s ease-in-out);
+			z-index: 99;
+		}
+	}
+
+	&.cys_she_container {
+		width: 50%;
+		right: 0;
+
+		&:before {
+			@include overlay(rgba(235,93,75,1));
+			@include transition(all .5s ease-in-out);
+			z-index: 99;
+		}
+	}
+}
+
+.cys_he_container, .cys_she_container {
+
+	img {
+	    display: block;
+	    width: 100%;
+	    height: 100%;
+	}
+
+}
+
+.cys_text_overlay {
+    position: absolute;
+    top: 40%;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 0px 50px;
+    z-index: 999;
+
+    p {
+    	position: relative;
+    	top: 20px;
+    	@include transparent();
+    	@include transition(all .5s ease-in-out);
+    }
+}
+
+.cys_he_container:hover {
+	&:before {
+		@include overlay(rgba(68,135,199,.5));
+	}
+
+	.cys_text_overlay p {
+		top: 0px;
+    	@include opaque();
+	}
+}
+
+.cys_she_container:hover {
+	&:before {
+		@include overlay(rgba(235,93,75,.5));
+	}
+	.cys_text_overlay p {
+		top: 0px;
+		@include opaque();
+	}
+}
+
+/*=== Flexslider ===*/
+
+.cys_split_container {
+
+	.flexslider {
+	    height: 100%;
+	}
+
+	ul.slides {
+	    margin: 0px;
+	    left: 0;
+	    position: absolute;
+	    -webkit-margin-start: 0px;
+	    -webkit-padding-start: 0px;
+	    height: 100%;
+	    width: 100%;
+
+	    li {
+		    background-size: cover !important;
+		    height: 100%;
+		}
+	}
+
+}
