@@ -38,7 +38,8 @@ gulp.task('http-server', function() {
 gulp.task('server', function() {
     gulp.run('lr-server');
 
-    var watchFiles = ['app/**/*.html', 'app/**/*.js'];
+    var watchFiles = ['app/**/*.html', 'app/**/*.js', 'app/**/*.css'];
+
     gulp.watch(watchFiles, function(e) {
         console.log('Files changed. Reloading...');
         gulp.src(watchFiles)
