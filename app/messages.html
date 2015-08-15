@@ -1,0 +1,179 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundation</title>
+    <link rel="stylesheet" href="css/app.css" />
+    <script src="bower_components/react/react-with-addons.js"></script>
+    <script src="bower_components/react/JSXTransformer.js"></script>
+    <script src="bower_components/modernizr/modernizr.js"></script>
+
+    <style>
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+    }
+
+    @keyframes typing1 {
+      0% {
+        width: 12px;
+        height: 12px;
+        margin: 0;
+      }
+      50% {
+        width: 8px;
+        height: 8px;
+        margin: 2px;
+      }
+      100% {
+        width: 8px;
+        height: 8px;
+        margin: 2px;
+      }
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .messenger {
+      border: 1px solid #eee;
+      position: relative;
+      transform: translate3d(0,0,0);
+
+      height: 600px;
+    }
+
+    #messagePane {
+      height: 100%;
+      max-height: 100%;
+      min-height: 100%;
+      overflow: auto;
+    }
+
+    .message.self {
+      text-align: right;
+    }
+
+    .point {
+      background-color: #ccc;
+      display: inline-block;
+      border-radius: 100px;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+      height: 8px;
+      width: 8px;
+      margin: 2px;
+    }
+    .point:nth-of-type(1) {
+      animation-name: typing1;
+    }
+    .point:nth-of-type(2) {
+      animation-delay: 333ms;
+      animation-name: typing1;
+    }
+    .point:nth-of-type(3) {
+      animation-delay: 667ms;
+      animation-name: typing1;
+    }
+
+    .message>span {
+      background-color: #eee;
+      border-radius: 1em/1em;
+      display: inline-block;
+      margin: .25em 0;
+      position: relative;
+      padding: 1em;
+    }
+
+
+    .message:not(.self) span::before {
+      display: block;
+      content: ' ';
+      position: absolute;
+      left: -12px;
+      top: 50%;
+      transform: translateY(-50%);
+
+      width: 0; 
+      height: 0; 
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      
+      border-right: 12px solid #eee;
+    }
+
+    .message:not(.self) {
+      margin-left: 12px;
+    }
+
+    .message.self span {
+      background-color: #1f96fb;
+      color: #fff;
+      margin-right: 12px;
+    }
+
+    .message.self span::after {
+      display: block;
+      content: ' ';
+      position: absolute;
+      right: -12px;
+      top: 50%;
+      transform: translateY(-50%);
+
+      width: 0; 
+      height: 0; 
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      
+      border-left: 12px solid #1f96fb;
+    }
+
+    #inputPane {
+      padding: .25em 0;
+      width: 100%;
+      bottom: 0;
+      display: block;
+      position: fixed !important;
+      transform: translateY(100%);
+    }
+
+    .indicator span::before,
+    .indicator span::after {
+      display: none !important;
+    }
+    .indicator {
+      text-align: right;
+      margin-right: 12px;
+    }
+
+    input {
+      font-size: 1em;
+      padding: .5em;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    input[type="text"] {
+      width: 80%;
+    }
+    input:focus {
+      outline: none;
+      box-shadow: none;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/foundation/js/foundation.min.js"></script>
+    <script src="js/app.js"></script>
+    <script type="text/jsx" src="js/react-components/messages.jsx"></script>
+    <script type="text/jsx">
+      React.render(
+        <Messenger id="messenger"></Messenger>,
+        document.getElementById('container')
+      );
+    </script>
+  </body>
+</html>
