@@ -189,6 +189,11 @@ input:focus {
 }
 
 /* line 176, ../scss/_messages.scss */
+[hidden] {
+  display: none !important;
+}
+
+/* line 180, ../scss/_messages.scss */
 input[disabled] {
   border-color: #eee;
   color: #eee;

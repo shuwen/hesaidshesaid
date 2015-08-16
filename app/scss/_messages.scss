@@ -173,6 +173,10 @@ input:focus {
   box-shadow: none;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 input[disabled] {
   border-color: #eee;
   color: #eee;
