@@ -52,7 +52,8 @@
     </div>
 
     <div class="main_screen_container">
-      <div id="message_container"></div>
+      <div id="john_message_container"></div>
+      <div id="sue_message_container"></div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
@@ -62,30 +63,53 @@
     <script src="js/jquery.flexslider-min.js"></script>
     <script type="text/jsx" src="js/react-components/messages.jsx"></script>
     <script type="text/jsx">
-      window.messenger = React.render(
-        <Messenger id="messenger"></Messenger>,
-        document.getElementById('message_container')
+      window.johnMessenger = React.render(
+        <Messenger id="johnMessenger"></Messenger>,
+        document.getElementById('john_message_container')
       );
+      johnMessenger.setBackgroundColor('rgba(0,0,255.25)');
 
-      var audioAlert = function() {
+      window.sueMessenger = React.render(
+        <Messenger id="sueMessenger"></Messenger>,
+        document.getElementById('sue_message_container')
+      );
+      sueMessenger.setBackgroundColor('rgba(255,0,0,.25)');
+
+      var johnFirstAlert = function() {
         var audioNode = this.getDOMNode().querySelector('audio');
         var host = this.props.host;
         audioNode.addEventListener('play', function() {
           console.log("You're playing audio");
-          host.setBackgroundImage("linear-gradient(rgba(0,0,187,.50),rgba(0,0,187,.50)), url('img/NumberEx3.jpeg')");
+          host.setBackgroundImage("linear-gradient(rgba(0,0,187,.50),rgba(0,0,187,.50)), url('/img/NumberEx3.jpeg')");
+        });
+
+        audioNode.addEventListener('ended', function() {
+          document.querySelector('.cys_she_container').classList.add('animated');
         });
       }
 
-      messenger.post({
+      johnMessenger.post({
         message: 'At the time of meeting he was in an open relationship.',
         contentType: 'text',
         self: false
       }, true);
-      messenger.post({
+      johnMessenger.post({
         message: 'https://raw.githubusercontent.com/tholman/elevator.js/master/demo/music/elevator.mp3',
         contentType: 'audio',
         self: false
-      }, true, audioAlert);
+      }, true, johnFirstAlert);
+
+      sueMessenger.post({
+        message: 'At the time of meeting he was in an open relationship. this is the other one',
+        contentType: 'text',
+        self: false
+      }, true);
+       sueMessenger.post({
+        message: 'https://raw.githubusercontent.com/tholman/elevator.js/master/demo/music/elevator.mp3',
+        contentType: 'audio',
+        self: false
+      }, true, function(){});
+
     </script>
   </body>
 </html>

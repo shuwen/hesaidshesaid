@@ -44,6 +44,12 @@ var Messenger = React.createClass({
 	componentDidMount: function() {
 	},
 
+	setBackgroundColor: function(backgroundColor) {
+		this.setState({
+			backgroundColor: backgroundColor
+		});
+	},
+
 	setBackgroundImage: function(backgroundImage) {
 		this.setState({
 			backgroundImage: backgroundImage
@@ -64,7 +70,8 @@ var Messenger = React.createClass({
 
 	getInitialState: function() {
 		return {
-			backgroundImage: '',			
+			backgroundImage: '',
+			backgroundColor: 'transparent',
 			messages: [
 				// {message: 'Yo listen to this', contentType: 'text'},
 				// {message: 'https://raw.githubusercontent.com/tholman/elevator.js/master/demo/music/elevator.mp3', contentType: 'audio'},
@@ -79,7 +86,8 @@ var Messenger = React.createClass({
 
 	render: function() {
 		var containerStyle = {
-			backgroundImage: this.state.backgroundImage
+			backgroundImage: this.state.backgroundImage,
+			backgroundColor: this.state.backgroundColor
 		}
 
 		var host = this;

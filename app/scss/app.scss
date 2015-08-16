@@ -133,7 +133,7 @@ MAIN SCREEN
 .main_screen_container.show {
     @include opaque();
     z-index: 999;
-    background-color: rgba($blue, .5);
+    // background-color: rgba($blue, .5);
 }
 
 /*======================================
