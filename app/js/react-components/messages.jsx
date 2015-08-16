@@ -78,6 +78,8 @@ var Messenger = React.createClass({
 			background: this.state.background
 		}
 
+		var host = this;
+
 		return (
 			<div style={containerStyle} className="messenger">
 				<div id="headerPane"></div>
@@ -85,7 +87,7 @@ var Messenger = React.createClass({
 					{this.state.messages.map(function(message) {
 						return (
 							// <Avatar url={message.user.avatarURL}></Avatar>
-							<Message super={this} message={message.message} contentType={message.contentType} self={message.self} callback={message.callback}></Message>
+							<Message host={host} message={message.message} contentType={message.contentType} self={message.self} callback={message.callback}></Message>
 						);
 					})}
 					<div id="indicator" className="message indicator" hidden={this.state.inputBuffer === ''}>
