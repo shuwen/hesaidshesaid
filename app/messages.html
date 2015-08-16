@@ -10,7 +10,7 @@
     <script src="bower_components/modernizr/modernizr.js"></script>
 
     <style>
-    body {
+/*    body {
       font-family: 'Helvetica Neue', sans-serif;
     }
 
@@ -77,7 +77,7 @@
       animation-name: typing1;
     }
 
-    .message>span {
+    .message>.bubble {
       background-color: #eee;
       border-radius: 1em/1em;
       display: inline-block;
@@ -87,7 +87,7 @@
     }
 
 
-    .message:not(.self) span::before {
+    .message:not(.self) .bubble::before {
       display: block;
       content: ' ';
       position: absolute;
@@ -107,13 +107,13 @@
       margin-left: 12px;
     }
 
-    .message.self span {
+    .message.self .bubble {
       background-color: #1f96fb;
       color: #fff;
       margin-right: 12px;
     }
 
-    .message.self span::after {
+    .message.self .bubble::after {
       display: block;
       content: ' ';
       position: absolute;
@@ -130,7 +130,7 @@
     }
 
     #inputPane {
-      padding: .25em 0;
+      padding: .5em 12px;
       width: 100%;
       bottom: 0;
       display: block;
@@ -138,8 +138,8 @@
       transform: translateY(100%);
     }
 
-    .indicator span::before,
-    .indicator span::after {
+    .indicator .bubble::before,
+    .indicator .bubble::after {
       display: none !important;
     }
     .indicator {
@@ -159,7 +159,7 @@
     input:focus {
       outline: none;
       box-shadow: none;
-    }
+    }*/
     </style>
   </head>
   <body>
@@ -170,10 +170,21 @@
     <script src="js/app.js"></script>
     <script type="text/jsx" src="js/react-components/messages.jsx"></script>
     <script type="text/jsx">
-      React.render(
+      window.messenger = React.render(
         <Messenger id="messenger"></Messenger>,
         document.getElementById('container')
       );
+      // messenger.setBackground('rgba(0,0,177,.25)');
+      messenger.post({
+        message: 'Hello from script tag',
+        contentType: 'text',
+        self: false
+      }, true);
+      messenger.post({
+        message: 'https://raw.githubusercontent.com/tholman/elevator.js/master/demo/music/elevator.mp3',
+        contentType: 'audio',
+        self: false
+      }, true);
     </script>
   </body>
 </html>

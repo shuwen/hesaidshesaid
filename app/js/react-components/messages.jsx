@@ -1,15 +1,46 @@
 var Message = React.createClass({
 	render: function() {
+		var messageContent;
+		if(this.props.contentType === 'text')
+			messageContent = this.props.message;
+		else if(this.props.contentType === 'audio')
+			messageContent = (
+				<audio controls>
+					<source src={this.props.message} type="audio/mp3" />
+				</audio>
+			);
+		else if(this.props.contentType === 'image')
+			messageContent = (
+				<img src={this.props.message} />
+			);
+		else if(this.props.contentType === 'video')
+			messageContent = (
+				<video controls>
+					<source src={this.props.message} type="video/mp4" />
+				</video>
+			);
+		else messageContent = this.props.message;
+
 		return (
-			<div className={'message '+this.props.type}>
-				<span>{this.props.message}</span>
+			<div className={'message '+(this.props.self ? 'self' : 'default')}>
+				<span className="bubble">{messageContent}</span>
 			</div>
 		);
 	}
 });
 
+
 var Messenger = React.createClass({
 	mixins: [React.addons.LinkedStateMixin],
+
+	componentDidMount: function() {
+	},
+
+	setBackground: function(background) {
+		this.setState({
+			background: background
+		});
+	},
 
 	componentWillUpdate: function() {
 	  var messagePane = this.getDOMNode().querySelector('#messagePane');
@@ -25,23 +56,34 @@ var Messenger = React.createClass({
 
 	getInitialState: function() {
 		return {
-			messages: [{message: 'Hello'}],
+			background: '',			
+			messages: [
+				// {message: 'Yo listen to this', contentType: 'text'},
+				// {message: 'https://raw.githubusercontent.com/tholman/elevator.js/master/demo/music/elevator.mp3', contentType: 'audio'},
+				// {message: 'https://38.media.tumblr.com/d9ca90da02e892260ec499687d425047/tumblr_mrny78nKb31ry07c8o1_400.gif', contentType: 'image'},
+				// {message: '', contentType: 'video'}
+			],
+			answers: [],
 			inputBuffer: ''
 		}
 	},
 
 	render: function() {
+		var containerStyle = {
+			background: this.state.background
+		}
 		return (
-			<div className="messenger">
+			<div style={containerStyle} className="messenger">
 				<div id="headerPane"></div>
 				<div id="messagePane">
 					{this.state.messages.map(function(message) {
 						return (
-							<Message message={message.message} type={message.type}></Message>
+							// <Avatar url={message.user.avatarURL}></Avatar>
+							<Message message={message.message} contentType={message.contentType} self={message.self}></Message>
 						);
 					})}
 					<div id="indicator" className="message indicator" hidden={this.state.inputBuffer === ''}>
-						<span>
+						<span className="bubble">
 						<i className="point"></i>
 						<i className="point"></i>
 						<i className="point"></i>
@@ -50,8 +92,8 @@ var Messenger = React.createClass({
 				</div>
 				<div id="inputPane">
 					<form onSubmit={this.handleSubmit}>
-						<input id="textInput" type="text" valueLink={this.linkState('inputBuffer')}></input>
-						<input type="submit"></input>
+						<input id="textInput" type="text" placeholder="Type your message..." valueLink={this.linkState('inputBuffer')}></input>
+						<input type="submit" value="Send"></input>
 					</form>
 				</div>
 			</div>
@@ -61,8 +103,19 @@ var Messenger = React.createClass({
 	handleSubmit: function(e) {
 		e.preventDefault();
 		if(this.state.inputBuffer) {
-			this.post(this.state.inputBuffer, true);
+			this.post(this.state.inputBuffer, 'text', true);
+
+			if(this.questionBuffer) {
+				this.setState({
+					answers: this.state.answers.concat([{
+						question: this.questionBuffer,
+						answer: this.state.inputBuffer
+					}])
+				});
+			}
+
 			this.setState({inputBuffer: ''});
+			this.questionBuffer = '';
 		}
 	},
 
@@ -70,15 +123,42 @@ var Messenger = React.createClass({
 		this.setState({inputBuffer: e.target.value});
 	},
 
-	post: function(input, self) {
-		console.log(input);
+	post: function(message, contentType, self, suppressSound) {
+		var newPost;
+		if(typeof message === 'object') {
+			newPost = message;
+			suppressSound = contentType;
+		}
+		else {
+			newPost = {
+				message: message,
+				contentType: contentType,
+				self: self
+			}
+		}
+		var notifSound = new Audio('/audio/TextSFX_3.mp3');
+
 		this.setState({
-			messages: this.state.messages.concat([
-				{
-					message: input,
-					type: self ? 'self' : 'default'
-				}
-			])
+			messages: this.state.messages.concat([newPost])
 		});
-	}
+
+		if(!suppressSound) notifSound.play();
+	},
+
+	prompt: function(question) {
+		this.post({
+			message: question,
+			contentType: 'text'
+		});
+		this.questionBuffer = question;
+	},
+
+	postImage: function(href) {
+
+	},
+
+	postAudio: function(href) {
+
+	},
+
 });
