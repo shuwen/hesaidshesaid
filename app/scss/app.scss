@@ -50,6 +50,10 @@
 HEADER
 ======================================*/
 
+#choose_your_story {
+	z-index: 9999;
+}
+
 .header {
   display: block;
   position: fixed;
@@ -118,12 +122,8 @@ MAIN SCREEN
 ======================================*/
 
 .main_screen_container {
-<<<<<<< HEAD
-    top: 63px;
-=======
     display: block;
-    // top: 63px;
->>>>>>> 89661639f5a3ec47a371f3bdfc57a77c4dfba4bd
+    box-sizing: border-box;
     position: relative;
     @include transparent();
     @include transition(opacity 2s ease-in-out);
