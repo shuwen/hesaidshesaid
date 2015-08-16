@@ -413,6 +413,18 @@ div#choose_your_story.move_down {
 	@include overlay(rgba(204,204,204,1));
 }
 
+.she_toggled {
+	
+	.cys_side.header_transform.cys_he_container:before {
+		@include overlay(rgba(204,204,204,1));
+	}
+
+	.cys_side.header_transform.cys_she_container:before {
+		@include overlay(rgba(235,93,75,1));
+	}
+
+}
+
 
 /*=== Animate Header ===*/
 
@@ -422,8 +434,8 @@ div#choose_your_story.move_down {
 
 @include keyframes('header_color_notification') {
 	0% {background: rgba(235,93,75,1);}
-	50% {background: rgba(204,204,204,.8);}
-	100% {background: rgba(204,204,204,1);}
+	50% {background: rgba(204,204,204,1);}
+	100% {background: rgba(235,93,75,1);}
 }
 
 /*=== Flexslider ===*/

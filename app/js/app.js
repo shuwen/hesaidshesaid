@@ -41,6 +41,8 @@ $(document).ready(function() {
 			$("body").removeClass("he_toggled").addClass("she_toggled");
 		}
 
+		$('.cys_she_container').removeClass("animated");
+
 	});
 
 	/*=== Toggle Body Class ===*/
