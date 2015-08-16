@@ -123,11 +123,12 @@ var Messenger = React.createClass({
 		this.setState({inputBuffer: e.target.value});
 	},
 
-	post: function(message, contentType, self, suppressSound) {
+	post: function(message, contentType, self, suppressSound, callback) {
 		var newPost;
 		if(typeof message === 'object') {
 			newPost = message;
 			suppressSound = contentType;
+			callback = self;
 		}
 		else {
 			newPost = {
@@ -137,6 +138,8 @@ var Messenger = React.createClass({
 			}
 		}
 		var notifSound = new Audio('/audio/TextSFX_3.mp3');
+
+		if(callback) callback.apply(this, []);
 
 		this.setState({
 			messages: this.state.messages.concat([newPost])
@@ -151,14 +154,6 @@ var Messenger = React.createClass({
 			contentType: 'text'
 		});
 		this.questionBuffer = question;
-	},
-
-	postImage: function(href) {
-
-	},
-
-	postAudio: function(href) {
-
 	},
 
 });
