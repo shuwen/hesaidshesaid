@@ -101,7 +101,7 @@ var Messenger = React.createClass({
 		return (
 			<div style={containerStyle} className="messenger">
 				<div id="headerPane"></div>
-				<div id="messagePane">
+				<div style={this.state.messagesPaneStyle} id="messagePane">
 					{this.state.messages.map(function(message) {
 						return (
 							// <Avatar url={message.user.avatarURL}></Avatar>
@@ -116,7 +116,7 @@ var Messenger = React.createClass({
 						</span>
 					</div>
 				</div>
-				<div id="inputPane">
+				<div style={this.state.inputPaneStyle} id="inputPane">
 					<form onSubmit={this.handleSubmit}>
 						<input id="textInput" type="text" placeholder="Type your message..." valueLink={this.linkState('inputBuffer')} disabled={this.state.disableInput}></input>
 						<input type="submit" value="Send" disabled={this.state.disableInput}></input>
@@ -142,6 +142,7 @@ var Messenger = React.createClass({
 
 			this.setState({inputBuffer: ''});
 			this.questionBuffer = '';
+			this.hideInput();
 		}
 	},
 
@@ -178,6 +179,7 @@ var Messenger = React.createClass({
 			message: question,
 			contentType: 'text'
 		});
+		this.showInput();
 		this.questionBuffer = question;
 	},
 
@@ -185,6 +187,30 @@ var Messenger = React.createClass({
 		this.setState({
 			disableInput: !this.state.disableInput
 		});
+	},
+
+	showInput: function() {
+		this.setState({
+			messagesPaneStyle: {
+				marginBottom: '-52px',
+				paddingBottom: '64px'
+			},
+			inputPaneStyle: {
+				display: 'block'
+			}
+		})
+	},
+
+	hideInput: function() {
+		this.setState({
+			messagesPaneStyle: {
+				marginBottom: '0',
+				paddinBottom: '0'
+			},
+			inputPaneStyle: {
+				display: 'none'
+			}
+		})
 	}
 
 });
