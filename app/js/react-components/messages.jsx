@@ -37,12 +37,16 @@ var Message = React.createClass({
 var Messenger = React.createClass({
 	mixins: [React.addons.LinkedStateMixin],
 
+	scrollOut: function() {
+
+	},
+
 	componentDidMount: function() {
 	},
 
-	setBackground: function(background) {
+	setBackgroundImage: function(backgroundImage) {
 		this.setState({
-			background: background
+			backgroundImage: backgroundImage
 		});
 	},
 
@@ -60,7 +64,7 @@ var Messenger = React.createClass({
 
 	getInitialState: function() {
 		return {
-			background: '',			
+			backgroundImage: '',			
 			messages: [
 				// {message: 'Yo listen to this', contentType: 'text'},
 				// {message: 'https://raw.githubusercontent.com/tholman/elevator.js/master/demo/music/elevator.mp3', contentType: 'audio'},
@@ -75,7 +79,7 @@ var Messenger = React.createClass({
 
 	render: function() {
 		var containerStyle = {
-			background: this.state.background
+			backgroundImage: this.state.backgroundImage
 		}
 
 		var host = this;

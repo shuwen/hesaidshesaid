@@ -27,7 +27,9 @@ $msg-color: #1f96fb;
 }
 
 .messenger {
-  border: 1px solid #eee;
+  background-size: cover;
+  background-position: bottom center;
+  border: 1px solid transparent;
   position: relative;
   transform: translate3d(0,0,0);
 }

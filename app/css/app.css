@@ -28,12 +28,14 @@ MESSAGES
 
 /* line 29, ../scss/_messages.scss */
 .messenger {
-  border: 1px solid #eee;
+  background-size: cover;
+  background-position: bottom center;
+  border: 1px solid transparent;
   position: relative;
   transform: translate3d(0, 0, 0);
 }
 
-/* line 35, ../scss/_messages.scss */
+/* line 37, ../scss/_messages.scss */
 #messagePane {
   box-sizing: border-box;
   height: 100vh;
@@ -43,12 +45,12 @@ MESSAGES
   overflow: auto;
 }
 
-/* line 44, ../scss/_messages.scss */
+/* line 46, ../scss/_messages.scss */
 .message.self {
   text-align: right;
 }
 
-/* line 48, ../scss/_messages.scss */
+/* line 50, ../scss/_messages.scss */
 .point {
   background-color: #ccc;
   display: inline-block;
@@ -60,24 +62,24 @@ MESSAGES
   margin: 2px;
 }
 
-/* line 59, ../scss/_messages.scss */
+/* line 61, ../scss/_messages.scss */
 .point:nth-of-type(1) {
   animation-name: typing1;
 }
 
-/* line 63, ../scss/_messages.scss */
+/* line 65, ../scss/_messages.scss */
 .point:nth-of-type(2) {
   animation-delay: 333ms;
   animation-name: typing1;
 }
 
-/* line 68, ../scss/_messages.scss */
+/* line 70, ../scss/_messages.scss */
 .point:nth-of-type(3) {
   animation-delay: 667ms;
   animation-name: typing1;
 }
 
-/* line 73, ../scss/_messages.scss */
+/* line 75, ../scss/_messages.scss */
 .message > span {
   background-color: #eee;
   border-radius: 1em/1em;
@@ -87,7 +89,7 @@ MESSAGES
   padding: 1em;
 }
 
-/* line 82, ../scss/_messages.scss */
+/* line 84, ../scss/_messages.scss */
 .message:not(.self) span::before {
   display: block;
   content: ' ';
@@ -102,19 +104,19 @@ MESSAGES
   border-right: 12px solid #eee;
 }
 
-/* line 98, ../scss/_messages.scss */
+/* line 100, ../scss/_messages.scss */
 .message:not(.self) {
   margin-left: 12px;
 }
 
-/* line 102, ../scss/_messages.scss */
+/* line 104, ../scss/_messages.scss */
 .message.self span {
   background-color: #1f96fb;
   color: #fff;
   margin-right: 12px;
 }
 
-/* line 108, ../scss/_messages.scss */
+/* line 110, ../scss/_messages.scss */
 .message.self span::after {
   display: block;
   content: ' ';
@@ -129,7 +131,7 @@ MESSAGES
   border-left: 12px solid #1f96fb;
 }
 
-/* line 124, ../scss/_messages.scss */
+/* line 126, ../scss/_messages.scss */
 #inputPane {
   padding: .5em 12px;
   background-color: #fff !important;
@@ -142,19 +144,19 @@ MESSAGES
   z-index: 1000;
 }
 
-/* line 136, ../scss/_messages.scss */
+/* line 138, ../scss/_messages.scss */
 .indicator span::before,
 .indicator span::after {
   display: none !important;
 }
 
-/* line 141, ../scss/_messages.scss */
+/* line 143, ../scss/_messages.scss */
 .indicator {
   text-align: right;
   margin-right: 12px;
 }
 
-/* line 146, ../scss/_messages.scss */
+/* line 148, ../scss/_messages.scss */
 input {
   font-size: 1em;
   border-radius: 5px;
@@ -162,13 +164,13 @@ input {
   border: 1px solid #ccc;
 }
 
-/* line 153, ../scss/_messages.scss */
+/* line 155, ../scss/_messages.scss */
 input[type="text"] {
   padding: .5em;
   width: 100%;
 }
 
-/* line 158, ../scss/_messages.scss */
+/* line 160, ../scss/_messages.scss */
 input[type="submit"] {
   background-color: #1f96fb;
   color: #fff;
@@ -180,13 +182,13 @@ input[type="submit"] {
   border-radius: 100px;
 }
 
-/* line 169, ../scss/_messages.scss */
+/* line 171, ../scss/_messages.scss */
 input:focus {
   outline: none;
   box-shadow: none;
 }
 
-/* line 174, ../scss/_messages.scss */
+/* line 176, ../scss/_messages.scss */
 input[disabled] {
   border-color: #eee;
   color: #eee;
