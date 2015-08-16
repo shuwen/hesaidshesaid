@@ -157,12 +157,12 @@ MESSAGES
 /* line 145, ../scss/_messages.scss */
 #inputPane {
   padding: .5em 12px;
-  background-color: #fff !important;
+  background-color: #efefef;
   width: 100%;
   bottom: 0;
   display: block;
   position: fixed !important;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #b1b1b1;
   transform: translateY(100%);
   z-index: 1000;
 }
@@ -2079,12 +2079,13 @@ HEADER
 /* line 195, ../scss/app.scss */
 .header_container h1, .header_container h2 {
   color: #f5f6f7;
+  margin-bottom: 50px;
 }
 
 /*======================================
 CHOOSE YOUR ACT
 ======================================*/
-/* line 204, ../scss/app.scss */
+/* line 205, ../scss/app.scss */
 video#cya_bgvid {
   position: fixed;
   top: 50%;
@@ -2099,7 +2100,7 @@ video#cya_bgvid {
   background-size: cover;
 }
 
-/* line 218, ../scss/app.scss */
+/* line 219, ../scss/app.scss */
 .intro_container {
   display: block;
   position: absolute;
@@ -2110,19 +2111,19 @@ video#cya_bgvid {
   z-index: 99;
   margin-left: 10px;
 }
-/* line 228, ../scss/app.scss */
+/* line 229, ../scss/app.scss */
 .intro_container h1 {
   color: #f5f6f7;
   font-size: 50px;
 }
-/* line 233, ../scss/app.scss */
+/* line 234, ../scss/app.scss */
 .intro_container p {
   font-size: 30px;
   line-height: 38px;
   color: #f5f6f7;
 }
 
-/* line 240, ../scss/app.scss */
+/* line 241, ../scss/app.scss */
 .intros {
   position: fixed;
   top: 0;
@@ -2130,14 +2131,14 @@ video#cya_bgvid {
   display: block;
   height: 100%;
 }
-/* line 247, ../scss/app.scss */
+/* line 248, ../scss/app.scss */
 .intros .intro_left {
   width: 50%;
   left: 0;
   height: 100%;
   position: absolute;
 }
-/* line 253, ../scss/app.scss */
+/* line 254, ../scss/app.scss */
 .intros .intro_left:before {
   content: "";
   position: absolute;
@@ -2148,14 +2149,14 @@ video#cya_bgvid {
   height: 100%;
   display: block;
 }
-/* line 258, ../scss/app.scss */
+/* line 259, ../scss/app.scss */
 .intros .intro_right {
   width: 50%;
   right: 0;
   height: 100%;
   position: absolute;
 }
-/* line 264, ../scss/app.scss */
+/* line 265, ../scss/app.scss */
 .intros .intro_right:before {
   content: "";
   position: absolute;
@@ -2170,7 +2171,7 @@ video#cya_bgvid {
 /*======================================
 INTRO VIDEO
 ======================================*/
-/* line 274, ../scss/app.scss */
+/* line 275, ../scss/app.scss */
 .fullscreen-bg {
   position: fixed;
   top: 0;
@@ -2185,12 +2186,12 @@ INTRO VIDEO
   transition: all 1s ease-in-out;
 }
 
-/* line 285, ../scss/app.scss */
+/* line 286, ../scss/app.scss */
 .fullscreen-bg.move_down_vid {
   bottom: -100%;
 }
 
-/* line 289, ../scss/app.scss */
+/* line 290, ../scss/app.scss */
 #bgvid {
   position: absolute;
   top: 0;
@@ -2202,7 +2203,7 @@ INTRO VIDEO
 /*======================================
 SUMMARY VIDEO
 ======================================*/
-/* line 301, ../scss/app.scss */
+/* line 302, ../scss/app.scss */
 .summary_video {
   position: fixed;
   top: 0;
@@ -2219,13 +2220,13 @@ SUMMARY VIDEO
   opacity: 0;
 }
 
-/* line 313, ../scss/app.scss */
+/* line 314, ../scss/app.scss */
 .summary_video.show {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
 
-/* line 317, ../scss/app.scss */
+/* line 318, ../scss/app.scss */
 #bgvid {
   position: absolute;
   top: 0;
@@ -2237,7 +2238,7 @@ SUMMARY VIDEO
 /*======================================
 CHOOSE YOUR STORY
 ======================================*/
-/* line 329, ../scss/app.scss */
+/* line 330, ../scss/app.scss */
 div#choose_your_story {
   position: absolute;
   display: block;
@@ -2249,17 +2250,17 @@ div#choose_your_story {
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
 }
-/* line 337, ../scss/app.scss */
+/* line 338, ../scss/app.scss */
 div#choose_your_story.header_transform {
   height: 10%;
 }
 
-/* line 342, ../scss/app.scss */
+/* line 343, ../scss/app.scss */
 div#choose_your_story.move_down {
   transform: translateY(0%);
 }
 
-/* line 346, ../scss/app.scss */
+/* line 347, ../scss/app.scss */
 .cys_split_container {
   position: relative;
   overflow-x: hidden;
@@ -2267,7 +2268,7 @@ div#choose_your_story.move_down {
   width: 100%;
 }
 
-/* line 353, ../scss/app.scss */
+/* line 354, ../scss/app.scss */
 .cys_side {
   height: 100%;
   position: fixed;
@@ -2275,7 +2276,7 @@ div#choose_your_story.move_down {
   background-size: cover;
   background-position: 60% 0;
 }
-/* line 360, ../scss/app.scss */
+/* line 361, ../scss/app.scss */
 .cys_side a {
   display: block;
   position: absolute;
@@ -2285,7 +2286,7 @@ div#choose_your_story.move_down {
   height: 100%;
   z-index: 9999;
 }
-/* line 370, ../scss/app.scss */
+/* line 371, ../scss/app.scss */
 .cys_side.cys_he_container {
   width: 50%;
   left: 0;
@@ -2293,7 +2294,7 @@ div#choose_your_story.move_down {
   z-index: 9999;
   cursor: pointer;
 }
-/* line 377, ../scss/app.scss */
+/* line 378, ../scss/app.scss */
 .cys_side.cys_he_container:before {
   content: "";
   position: absolute;
@@ -2309,7 +2310,7 @@ div#choose_your_story.move_down {
   transition: all 0.5s ease-in-out;
   z-index: 99;
 }
-/* line 384, ../scss/app.scss */
+/* line 385, ../scss/app.scss */
 .cys_side.cys_she_container {
   width: 50%;
   right: 0;
@@ -2317,7 +2318,7 @@ div#choose_your_story.move_down {
   z-index: 9999;
   cursor: pointer;
 }
-/* line 391, ../scss/app.scss */
+/* line 392, ../scss/app.scss */
 .cys_side.cys_she_container:before {
   content: "";
   position: absolute;
@@ -2334,14 +2335,14 @@ div#choose_your_story.move_down {
   z-index: 99;
 }
 
-/* line 401, ../scss/app.scss */
+/* line 402, ../scss/app.scss */
 .cys_he_container img, .cys_she_container img {
   display: block;
   width: 100%;
   height: 100%;
 }
 
-/* line 409, ../scss/app.scss */
+/* line 410, ../scss/app.scss */
 .cys_text_overlay {
   position: absolute;
   top: 40%;
@@ -2355,7 +2356,17 @@ div#choose_your_story.move_down {
   -webkit-transition: top 1s ease-in-out;
   transition: top 1s ease-in-out;
 }
-/* line 419, ../scss/app.scss */
+/* line 420, ../scss/app.scss */
+.cys_text_overlay img {
+  display: inline-block;
+  width: auto;
+  height: auto;
+}
+/* line 426, ../scss/app.scss */
+.cys_text_overlay h2 {
+  display: inline-block;
+}
+/* line 430, ../scss/app.scss */
 .cys_text_overlay p {
   position: relative;
   top: 20px;
@@ -2367,16 +2378,16 @@ div#choose_your_story.move_down {
   transition: all 0.5s ease-in-out;
 }
 
-/* line 427, ../scss/app.scss */
+/* line 438, ../scss/app.scss */
 .header_transform .cys_text_overlay {
   top: 0%;
 }
-/* line 430, ../scss/app.scss */
+/* line 441, ../scss/app.scss */
 .header_transform .cys_text_overlay p {
   display: none;
 }
 
-/* line 436, ../scss/app.scss */
+/* line 447, ../scss/app.scss */
 .cys_he_container:hover:before {
   content: "";
   position: absolute;
@@ -2387,14 +2398,14 @@ div#choose_your_story.move_down {
   height: 100%;
   display: block;
 }
-/* line 440, ../scss/app.scss */
+/* line 451, ../scss/app.scss */
 .cys_he_container:hover .cys_text_overlay p {
   top: 0px;
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
 
-/* line 447, ../scss/app.scss */
+/* line 458, ../scss/app.scss */
 .cys_she_container:hover:before {
   content: "";
   position: absolute;
@@ -2405,14 +2416,14 @@ div#choose_your_story.move_down {
   height: 100%;
   display: block;
 }
-/* line 450, ../scss/app.scss */
+/* line 461, ../scss/app.scss */
 .cys_she_container:hover .cys_text_overlay p {
   top: 0px;
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
 
-/* line 456, ../scss/app.scss */
+/* line 467, ../scss/app.scss */
 .cys_side.header_transform.cys_he_container:before {
   content: "";
   position: absolute;
@@ -2428,11 +2439,11 @@ div#choose_your_story.move_down {
   transition: all 1s ease-in-out;
 }
 
-/* line 461, ../scss/app.scss */
+/* line 472, ../scss/app.scss */
 .cys_side.header_transform.cys_she_container:before {
   content: "";
   position: absolute;
-  background: #cccccc;
+  background: #929292;
   top: 0;
   bottom: 0;
   width: 100%;
@@ -2440,18 +2451,18 @@ div#choose_your_story.move_down {
   display: block;
 }
 
-/* line 467, ../scss/app.scss */
+/* line 478, ../scss/app.scss */
 .she_toggled .cys_side.header_transform.cys_he_container:before {
   content: "";
   position: absolute;
-  background: #cccccc;
+  background: #929292;
   top: 0;
   bottom: 0;
   width: 100%;
   height: 100%;
   display: block;
 }
-/* line 471, ../scss/app.scss */
+/* line 482, ../scss/app.scss */
 .she_toggled .cys_side.header_transform.cys_she_container:before {
   content: "";
   position: absolute;
@@ -2464,7 +2475,7 @@ div#choose_your_story.move_down {
 }
 
 /*=== Animate Header ===*/
-/* line 480, ../scss/app.scss */
+/* line 491, ../scss/app.scss */
 .cys_she_container.animated:before {
   -webkit-animation: header_color_notification 1s infinite ease-in-out;
   -moz-animation: header_color_notification 1s infinite ease-in-out;
@@ -2477,7 +2488,7 @@ div#choose_your_story.move_down {
     background: #eb5d4b;
   }
   50% {
-    background: #cccccc;
+    background: #929292;
   }
   100% {
     background: #eb5d4b;
@@ -2488,7 +2499,7 @@ div#choose_your_story.move_down {
     background: #eb5d4b;
   }
   50% {
-    background: #cccccc;
+    background: #929292;
   }
   100% {
     background: #eb5d4b;
@@ -2499,7 +2510,7 @@ div#choose_your_story.move_down {
     background: #eb5d4b;
   }
   50% {
-    background: #cccccc;
+    background: #929292;
   }
   100% {
     background: #eb5d4b;
@@ -2510,18 +2521,18 @@ div#choose_your_story.move_down {
     background: #eb5d4b;
   }
   50% {
-    background: #cccccc;
+    background: #929292;
   }
   100% {
     background: #eb5d4b;
   }
 }
 /*=== Flexslider ===*/
-/* line 494, ../scss/app.scss */
+/* line 505, ../scss/app.scss */
 .cys_split_container .flexslider {
   height: 100%;
 }
-/* line 498, ../scss/app.scss */
+/* line 509, ../scss/app.scss */
 .cys_split_container ul.slides {
   margin: 0px;
   left: 0;
@@ -2531,7 +2542,7 @@ div#choose_your_story.move_down {
   height: 100%;
   width: 100%;
 }
-/* line 507, ../scss/app.scss */
+/* line 518, ../scss/app.scss */
 .cys_split_container ul.slides li {
   background-size: cover !important;
   height: 100%;

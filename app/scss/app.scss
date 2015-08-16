@@ -194,6 +194,7 @@ HEADER
 
     h1, h2 {
     	color: $white;
+    	margin-bottom: 50px;
     }
 }
 
@@ -416,6 +417,16 @@ div#choose_your_story.move_down {
     z-index: 999;
     @include transition(top 1s ease-in-out);
 
+    img {
+	    display: inline-block;
+	    width: auto;
+	    height: auto;
+	}
+
+	h2 {
+	    display: inline-block;
+	}
+
     p {
     	position: relative;
     	top: 20px;
@@ -459,13 +470,13 @@ div#choose_your_story.move_down {
 }
 
 .cys_side.header_transform.cys_she_container:before {
-	@include overlay(rgba(204,204,204,1));
+	@include overlay(#929292);
 }
 
 .she_toggled {
 	
 	.cys_side.header_transform.cys_he_container:before {
-		@include overlay(rgba(204,204,204,1));
+		@include overlay(#929292);
 	}
 
 	.cys_side.header_transform.cys_she_container:before {
@@ -483,7 +494,7 @@ div#choose_your_story.move_down {
 
 @include keyframes('header_color_notification') {
 	0% {background: rgba(235,93,75,1);}
-	50% {background: rgba(204,204,204,1);}
+	50% {background: #929292;}
 	100% {background: rgba(235,93,75,1);}
 }
 
