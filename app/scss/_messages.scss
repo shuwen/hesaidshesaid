@@ -35,8 +35,9 @@ $msg-color: #1f96fb;
 #messagePane {
   box-sizing: border-box;
   height: 100vh;
+  padding-top: 74px;
   margin-bottom: -52px;
-  padding-bottom: 52px;
+  padding-bottom: 64px;
   overflow: auto;
 }
 

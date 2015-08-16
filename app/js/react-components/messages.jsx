@@ -73,6 +73,7 @@ var Messenger = React.createClass({
 		var containerStyle = {
 			background: this.state.background
 		}
+
 		return (
 			<div style={containerStyle} className="messenger">
 				<div id="headerPane"></div>

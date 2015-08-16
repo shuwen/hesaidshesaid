@@ -37,17 +37,18 @@ MESSAGES
 #messagePane {
   box-sizing: border-box;
   height: 100vh;
+  padding-top: 74px;
   margin-bottom: -52px;
-  padding-bottom: 52px;
+  padding-bottom: 64px;
   overflow: auto;
 }
 
-/* line 43, ../scss/_messages.scss */
+/* line 44, ../scss/_messages.scss */
 .message.self {
   text-align: right;
 }
 
-/* line 47, ../scss/_messages.scss */
+/* line 48, ../scss/_messages.scss */
 .point {
   background-color: #ccc;
   display: inline-block;
@@ -59,24 +60,24 @@ MESSAGES
   margin: 2px;
 }
 
-/* line 58, ../scss/_messages.scss */
+/* line 59, ../scss/_messages.scss */
 .point:nth-of-type(1) {
   animation-name: typing1;
 }
 
-/* line 62, ../scss/_messages.scss */
+/* line 63, ../scss/_messages.scss */
 .point:nth-of-type(2) {
   animation-delay: 333ms;
   animation-name: typing1;
 }
 
-/* line 67, ../scss/_messages.scss */
+/* line 68, ../scss/_messages.scss */
 .point:nth-of-type(3) {
   animation-delay: 667ms;
   animation-name: typing1;
 }
 
-/* line 72, ../scss/_messages.scss */
+/* line 73, ../scss/_messages.scss */
 .message > span {
   background-color: #eee;
   border-radius: 1em/1em;
@@ -86,7 +87,7 @@ MESSAGES
   padding: 1em;
 }
 
-/* line 81, ../scss/_messages.scss */
+/* line 82, ../scss/_messages.scss */
 .message:not(.self) span::before {
   display: block;
   content: ' ';
@@ -101,19 +102,19 @@ MESSAGES
   border-right: 12px solid #eee;
 }
 
-/* line 97, ../scss/_messages.scss */
+/* line 98, ../scss/_messages.scss */
 .message:not(.self) {
   margin-left: 12px;
 }
 
-/* line 101, ../scss/_messages.scss */
+/* line 102, ../scss/_messages.scss */
 .message.self span {
   background-color: #1f96fb;
   color: #fff;
   margin-right: 12px;
 }
 
-/* line 107, ../scss/_messages.scss */
+/* line 108, ../scss/_messages.scss */
 .message.self span::after {
   display: block;
   content: ' ';
@@ -128,7 +129,7 @@ MESSAGES
   border-left: 12px solid #1f96fb;
 }
 
-/* line 123, ../scss/_messages.scss */
+/* line 124, ../scss/_messages.scss */
 #inputPane {
   padding: .5em 12px;
   width: 100%;
@@ -138,19 +139,19 @@ MESSAGES
   transform: translateY(100%);
 }
 
-/* line 132, ../scss/_messages.scss */
+/* line 133, ../scss/_messages.scss */
 .indicator span::before,
 .indicator span::after {
   display: none !important;
 }
 
-/* line 137, ../scss/_messages.scss */
+/* line 138, ../scss/_messages.scss */
 .indicator {
   text-align: right;
   margin-right: 12px;
 }
 
-/* line 142, ../scss/_messages.scss */
+/* line 143, ../scss/_messages.scss */
 input {
   font-size: 1em;
   border-radius: 5px;
@@ -158,13 +159,13 @@ input {
   border: 1px solid #ccc;
 }
 
-/* line 149, ../scss/_messages.scss */
+/* line 150, ../scss/_messages.scss */
 input[type="text"] {
   padding: .5em;
   width: 100%;
 }
 
-/* line 154, ../scss/_messages.scss */
+/* line 155, ../scss/_messages.scss */
 input[type="submit"] {
   background-color: #1f96fb;
   color: #fff;
@@ -176,13 +177,13 @@ input[type="submit"] {
   border-radius: 100px;
 }
 
-/* line 165, ../scss/_messages.scss */
+/* line 166, ../scss/_messages.scss */
 input:focus {
   outline: none;
   box-shadow: none;
 }
 
-/* line 170, ../scss/_messages.scss */
+/* line 171, ../scss/_messages.scss */
 input[disabled] {
   border-color: #eee;
   color: #eee;
@@ -1883,9 +1884,10 @@ HEADER
   width: 100%;
   z-index: 9999;
   box-shadow: 0px 1px 5px #333333;
+  background-color: #fff;
 }
 
-/* line 63, ../scss/app.scss */
+/* line 64, ../scss/app.scss */
 .he_toggled .she_said_header {
   opacity: .5;
   -moz-transition: all 0.5s ease-in-out;
@@ -1893,7 +1895,7 @@ HEADER
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
-/* line 68, ../scss/app.scss */
+/* line 69, ../scss/app.scss */
 .he_toggled .main_screen_container {
   background-color: rgba(68, 135, 199, 0.5);
   -moz-transition: all 0.5s ease-in-out;
@@ -1902,7 +1904,7 @@ HEADER
   transition: all 0.5s ease-in-out;
 }
 
-/* line 77, ../scss/app.scss */
+/* line 78, ../scss/app.scss */
 .she_toggled .he_said_header {
   opacity: .5;
   -moz-transition: all 0.5s ease-in-out;
@@ -1910,7 +1912,7 @@ HEADER
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
-/* line 82, ../scss/app.scss */
+/* line 83, ../scss/app.scss */
 .she_toggled .main_screen_container {
   background-color: rgba(235, 93, 75, 0.5);
   -moz-transition: all 0.5s ease-in-out;
@@ -1919,7 +1921,7 @@ HEADER
   transition: all 0.5s ease-in-out;
 }
 
-/* line 89, ../scss/app.scss */
+/* line 90, ../scss/app.scss */
 .header h1 {
   color: #ffffff;
   text-transform: uppercase;
@@ -1927,21 +1929,21 @@ HEADER
   font-size: 30px;
 }
 
-/* line 96, ../scss/app.scss */
+/* line 97, ../scss/app.scss */
 .he_said_header {
   text-align: right;
   background: #4487c7;
   cursor: pointer;
 }
 
-/* line 102, ../scss/app.scss */
+/* line 103, ../scss/app.scss */
 .she_said_header {
   text-align: left;
   background: #eb5d4b;
   cursor: pointer;
 }
 
-/* line 108, ../scss/app.scss */
+/* line 109, ../scss/app.scss */
 .he_said_header, .she_said_header {
   display: block;
   width: 50%;
@@ -1952,10 +1954,9 @@ HEADER
 /*======================================
 MAIN SCREEN
 ======================================*/
-/* line 119, ../scss/app.scss */
+/* line 120, ../scss/app.scss */
 .main_screen_container {
   display: block;
-  top: 63px;
   position: relative;
 }
 
@@ -1963,7 +1964,7 @@ MAIN SCREEN
 COMPONENTS
 ======================================*/
 /*=== Buttons ===*/
-/* line 131, ../scss/app.scss */
+/* line 132, ../scss/app.scss */
 a.primary_button {
   display: inline-block;
   background-color: #000;
@@ -1973,7 +1974,7 @@ a.primary_button {
   text-transform: uppercase;
 }
 
-/* line 140, ../scss/app.scss */
+/* line 141, ../scss/app.scss */
 .hide {
   display: none;
 }
@@ -1981,7 +1982,7 @@ a.primary_button {
 /*======================================
 HEADER
 ======================================*/
-/* line 148, ../scss/app.scss */
+/* line 149, ../scss/app.scss */
 .header_container {
   display: block;
   position: fixed;
@@ -1997,12 +1998,12 @@ HEADER
   -webkit-transition: opacity 1s ease-in-out;
   transition: opacity 1s ease-in-out;
 }
-/* line 159, ../scss/app.scss */
+/* line 160, ../scss/app.scss */
 .header_container.fadeOut {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
-/* line 163, ../scss/app.scss */
+/* line 164, ../scss/app.scss */
 .header_container h1 {
   color: #f5f6f7;
 }
@@ -2010,7 +2011,7 @@ HEADER
 /*======================================
 CHOOSE YOUR ACT
 ======================================*/
-/* line 172, ../scss/app.scss */
+/* line 173, ../scss/app.scss */
 video#cya_bgvid {
   position: fixed;
   top: 50%;
@@ -2026,7 +2027,7 @@ video#cya_bgvid {
   background-size: cover;
 }
 
-/* line 187, ../scss/app.scss */
+/* line 188, ../scss/app.scss */
 .intro_container {
   display: block;
   position: absolute;
@@ -2036,18 +2037,18 @@ video#cya_bgvid {
   padding: 0px 200px;
   z-index: 99;
 }
-/* line 196, ../scss/app.scss */
+/* line 197, ../scss/app.scss */
 .intro_container h1 {
   color: #000000;
 }
-/* line 200, ../scss/app.scss */
+/* line 201, ../scss/app.scss */
 .intro_container p {
   font-size: 30px;
   line-height: 38px;
   color: #f5f6f7;
 }
 
-/* line 207, ../scss/app.scss */
+/* line 208, ../scss/app.scss */
 .intros {
   position: fixed;
   top: 0;
@@ -2055,14 +2056,14 @@ video#cya_bgvid {
   display: block;
   height: 100%;
 }
-/* line 214, ../scss/app.scss */
+/* line 215, ../scss/app.scss */
 .intros .intro_left {
   width: 50%;
   left: 0;
   height: 100%;
   position: absolute;
 }
-/* line 220, ../scss/app.scss */
+/* line 221, ../scss/app.scss */
 .intros .intro_left:before {
   content: "";
   position: absolute;
@@ -2073,14 +2074,14 @@ video#cya_bgvid {
   height: 100%;
   display: block;
 }
-/* line 225, ../scss/app.scss */
+/* line 226, ../scss/app.scss */
 .intros .intro_right {
   width: 50%;
   right: 0;
   height: 100%;
   position: absolute;
 }
-/* line 231, ../scss/app.scss */
+/* line 232, ../scss/app.scss */
 .intros .intro_right:before {
   content: "";
   position: absolute;
@@ -2095,7 +2096,7 @@ video#cya_bgvid {
 /*======================================
 INTRO VIDEO
 ======================================*/
-/* line 241, ../scss/app.scss */
+/* line 242, ../scss/app.scss */
 .fullscreen-bg {
   position: fixed;
   top: 0;
@@ -2110,12 +2111,12 @@ INTRO VIDEO
   transition: all 1s ease-in-out;
 }
 
-/* line 252, ../scss/app.scss */
+/* line 253, ../scss/app.scss */
 .fullscreen-bg.move_down_vid {
   bottom: -100%;
 }
 
-/* line 256, ../scss/app.scss */
+/* line 257, ../scss/app.scss */
 #bgvid {
   position: absolute;
   top: 0;
@@ -2127,7 +2128,7 @@ INTRO VIDEO
 /*======================================
 CHOOSE YOUR STORY
 ======================================*/
-/* line 268, ../scss/app.scss */
+/* line 269, ../scss/app.scss */
 div#choose_your_story {
   position: absolute;
   display: block;
@@ -2140,12 +2141,12 @@ div#choose_your_story {
   transition: all 1s ease-in-out;
 }
 
-/* line 277, ../scss/app.scss */
+/* line 278, ../scss/app.scss */
 div#choose_your_story.move_down {
   transform: translateY(0%);
 }
 
-/* line 281, ../scss/app.scss */
+/* line 282, ../scss/app.scss */
 .cys_split_container {
   position: relative;
   overflow-x: hidden;
@@ -2153,7 +2154,7 @@ div#choose_your_story.move_down {
   width: 100%;
 }
 
-/* line 288, ../scss/app.scss */
+/* line 289, ../scss/app.scss */
 .cys_side {
   height: 100%;
   position: fixed;
@@ -2165,7 +2166,7 @@ div#choose_your_story.move_down {
   -webkit-transition: height 1s ease-in-out;
   transition: height 1s ease-in-out;
 }
-/* line 296, ../scss/app.scss */
+/* line 297, ../scss/app.scss */
 .cys_side a {
   display: block;
   position: absolute;
@@ -2175,17 +2176,17 @@ div#choose_your_story.move_down {
   height: 100%;
   z-index: 9999;
 }
-/* line 306, ../scss/app.scss */
+/* line 307, ../scss/app.scss */
 .cys_side.header_transform {
   height: 10%;
 }
-/* line 310, ../scss/app.scss */
+/* line 311, ../scss/app.scss */
 .cys_side.cys_he_container {
   width: 50%;
   left: 0;
   background-image: url("../img/he_intro.jpg");
 }
-/* line 315, ../scss/app.scss */
+/* line 316, ../scss/app.scss */
 .cys_side.cys_he_container:before {
   content: "";
   position: absolute;
@@ -2201,13 +2202,13 @@ div#choose_your_story.move_down {
   transition: all 0.5s ease-in-out;
   z-index: 99;
 }
-/* line 322, ../scss/app.scss */
+/* line 323, ../scss/app.scss */
 .cys_side.cys_she_container {
   width: 50%;
   right: 0;
   background-image: url("../img/she_intro.jpg");
 }
-/* line 327, ../scss/app.scss */
+/* line 328, ../scss/app.scss */
 .cys_side.cys_she_container:before {
   content: "";
   position: absolute;
@@ -2224,14 +2225,14 @@ div#choose_your_story.move_down {
   z-index: 99;
 }
 
-/* line 337, ../scss/app.scss */
+/* line 338, ../scss/app.scss */
 .cys_he_container img, .cys_she_container img {
   display: block;
   width: 100%;
   height: 100%;
 }
 
-/* line 345, ../scss/app.scss */
+/* line 346, ../scss/app.scss */
 .cys_text_overlay {
   position: absolute;
   top: 40%;
@@ -2241,7 +2242,7 @@ div#choose_your_story.move_down {
   padding: 0px 50px;
   z-index: 999;
 }
-/* line 354, ../scss/app.scss */
+/* line 355, ../scss/app.scss */
 .cys_text_overlay p {
   position: relative;
   top: 20px;
@@ -2253,7 +2254,7 @@ div#choose_your_story.move_down {
   transition: all 0.5s ease-in-out;
 }
 
-/* line 363, ../scss/app.scss */
+/* line 364, ../scss/app.scss */
 .cys_he_container:hover:before {
   content: "";
   position: absolute;
@@ -2264,14 +2265,14 @@ div#choose_your_story.move_down {
   height: 100%;
   display: block;
 }
-/* line 367, ../scss/app.scss */
+/* line 368, ../scss/app.scss */
 .cys_he_container:hover .cys_text_overlay p {
   top: 0px;
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
 
-/* line 374, ../scss/app.scss */
+/* line 375, ../scss/app.scss */
 .cys_she_container:hover:before {
   content: "";
   position: absolute;
@@ -2282,7 +2283,7 @@ div#choose_your_story.move_down {
   height: 100%;
   display: block;
 }
-/* line 377, ../scss/app.scss */
+/* line 378, ../scss/app.scss */
 .cys_she_container:hover .cys_text_overlay p {
   top: 0px;
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
@@ -2290,11 +2291,11 @@ div#choose_your_story.move_down {
 }
 
 /*=== Flexslider ===*/
-/* line 387, ../scss/app.scss */
+/* line 388, ../scss/app.scss */
 .cys_split_container .flexslider {
   height: 100%;
 }
-/* line 391, ../scss/app.scss */
+/* line 392, ../scss/app.scss */
 .cys_split_container ul.slides {
   margin: 0px;
   left: 0;
@@ -2304,7 +2305,7 @@ div#choose_your_story.move_down {
   height: 100%;
   width: 100%;
 }
-/* line 400, ../scss/app.scss */
+/* line 401, ../scss/app.scss */
 .cys_split_container ul.slides li {
   background-size: cover !important;
   height: 100%;
