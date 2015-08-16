@@ -2,6 +2,8 @@
 MESSAGES
 ===============================*/
 
+$msg-color: #1f96fb;
+
 @keyframes typing1 {
   0% {
     width: 12px;
@@ -97,7 +99,7 @@ MESSAGES
 }
 
 .message.self span {
-  background-color: #1f96fb;
+  background-color: $msg-color;
   color: #fff;
   margin-right: 12px;
 }
@@ -119,7 +121,7 @@ MESSAGES
 }
 
 #inputPane {
-  padding: .25em 0;
+  padding: .5em 12px;
   width: 100%;
   bottom: 0;
   display: block;
@@ -139,13 +141,25 @@ MESSAGES
 
 input {
   font-size: 1em;
-  padding: .5em;
   border-radius: 5px;
+  border: none;
   border: 1px solid #ccc;
 }
 
 input[type="text"] {
-  width: 80%;
+  padding: .5em;
+  width: 100%;
+}
+
+input[type="submit"] {
+  background-color: $msg-color;
+  color: #fff;
+  font-weight: lighter;
+  box-sizing: border-box;
+  position: absolute;
+  right: 0;
+  margin: .25em 1em .25em 0;
+  border-radius: 100px;
 }
 
 input:focus {
