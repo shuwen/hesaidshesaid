@@ -61,6 +61,8 @@
     <script src="bower_components/foundation/js/foundation.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/jquery.flexslider-min.js"></script>
+    <script src="//use.typekit.net/jyf0kku.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
     <script type="text/jsx" src="js/react-components/messages.jsx"></script>
     <script type="text/jsx">
       window.johnMessenger = React.render(
@@ -80,7 +82,7 @@
         var host = this.props.host;
         audioNode.addEventListener('play', function() {
           console.log("You're playing audio");
-          host.setBackgroundImage("linear-gradient(rgba(0,0,187,.50),rgba(0,0,187,.50)), url('/img/NumberEx3.jpeg')");
+          host.setBackgroundImage("linear-gradient(rgba(0,0,187,.50),rgba(0,0,187,.50)), url('img/NumberEx3.jpeg')");
         });
 
         audioNode.addEventListener('ended', function() {
