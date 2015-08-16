@@ -134,12 +134,12 @@ MESSAGES
 /* line 126, ../scss/_messages.scss */
 #inputPane {
   padding: .5em 12px;
-  background-color: #fff !important;
+  background-color: #efefef;
   width: 100%;
   bottom: 0;
   display: block;
   position: fixed !important;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #b1b1b1;
   transform: translateY(100%);
   z-index: 1000;
 }

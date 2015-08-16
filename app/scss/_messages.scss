@@ -124,15 +124,15 @@ $msg-color: #1f96fb;
 }
 
 #inputPane {
-  padding: .5em 12px;
-  background-color: #fff !important;
-  width: 100%;
-  bottom: 0;
-  display: block;
-  position: fixed !important;
-  border-top: 1px solid #ccc;
-  transform: translateY(100%);
-  z-index: 1000;
+    padding: .5em 12px;
+    background-color: #efefef;
+    width: 100%;
+    bottom: 0;
+    display: block;
+    position: fixed !important;
+    border-top: 1px solid #b1b1b1;
+    transform: translateY(100%);
+    z-index: 1000;
 }
 
 .indicator span::before,
