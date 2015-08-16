@@ -132,26 +132,29 @@ MESSAGES
 /* line 124, ../scss/_messages.scss */
 #inputPane {
   padding: .5em 12px;
+  background-color: #fff !important;
   width: 100%;
   bottom: 0;
   display: block;
   position: fixed !important;
+  border-top: 1px solid #ccc;
   transform: translateY(100%);
+  z-index: 1000;
 }
 
-/* line 133, ../scss/_messages.scss */
+/* line 136, ../scss/_messages.scss */
 .indicator span::before,
 .indicator span::after {
   display: none !important;
 }
 
-/* line 138, ../scss/_messages.scss */
+/* line 141, ../scss/_messages.scss */
 .indicator {
   text-align: right;
   margin-right: 12px;
 }
 
-/* line 143, ../scss/_messages.scss */
+/* line 146, ../scss/_messages.scss */
 input {
   font-size: 1em;
   border-radius: 5px;
@@ -159,13 +162,13 @@ input {
   border: 1px solid #ccc;
 }
 
-/* line 150, ../scss/_messages.scss */
+/* line 153, ../scss/_messages.scss */
 input[type="text"] {
   padding: .5em;
   width: 100%;
 }
 
-/* line 155, ../scss/_messages.scss */
+/* line 158, ../scss/_messages.scss */
 input[type="submit"] {
   background-color: #1f96fb;
   color: #fff;
@@ -177,13 +180,13 @@ input[type="submit"] {
   border-radius: 100px;
 }
 
-/* line 166, ../scss/_messages.scss */
+/* line 169, ../scss/_messages.scss */
 input:focus {
   outline: none;
   box-shadow: none;
 }
 
-/* line 171, ../scss/_messages.scss */
+/* line 174, ../scss/_messages.scss */
 input[disabled] {
   border-color: #eee;
   color: #eee;

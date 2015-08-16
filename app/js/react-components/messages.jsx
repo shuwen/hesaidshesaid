@@ -1,4 +1,8 @@
 var Message = React.createClass({
+	componentDidMount: function() {
+		if(this.props.callback) this.props.callback.apply(this);
+	},
+
 	render: function() {
 		var messageContent;
 		if(this.props.contentType === 'text')
@@ -81,7 +85,7 @@ var Messenger = React.createClass({
 					{this.state.messages.map(function(message) {
 						return (
 							// <Avatar url={message.user.avatarURL}></Avatar>
-							<Message message={message.message} contentType={message.contentType} self={message.self}></Message>
+							<Message super={this} message={message.message} contentType={message.contentType} self={message.self} callback={message.callback}></Message>
 						);
 					})}
 					<div id="indicator" className="message indicator" hidden={this.state.inputBuffer === ''}>
@@ -130,18 +134,17 @@ var Messenger = React.createClass({
 		if(typeof message === 'object') {
 			newPost = message;
 			suppressSound = contentType;
-			callback = self;
+			message.callback = self;
 		}
 		else {
 			newPost = {
 				message: message,
 				contentType: contentType,
-				self: self
+				self: self,
+				callback: callback
 			}
 		}
 		var notifSound = new Audio('/audio/TextSFX_3.mp3');
-
-		if(callback) callback.apply(this, []);
 
 		this.setState({
 			messages: this.state.messages.concat([newPost])

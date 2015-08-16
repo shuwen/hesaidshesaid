@@ -23,8 +23,13 @@
       );
       // messenger.setBackground('rgba(0,0,177,.25)');
 
-      var postAlert = function() {
-        console.log( this.getDOMNode() );
+      var audioAlert = function() {
+        console.log(this.props.super);
+        var audioNode = this.getDOMNode().querySelector('audio');
+        audioNode.addEventListener('play', function() {
+          // console.log("You're playing audio");
+          messenger.setBackground('red');
+        });
       }
 
       messenger.post({
@@ -36,7 +41,7 @@
         message: 'https://raw.githubusercontent.com/tholman/elevator.js/master/demo/music/elevator.mp3',
         contentType: 'audio',
         self: false
-      }, true, postAlert);
+      }, true, audioAlert);
     </script>
   </body>
 </html>
