@@ -107,39 +107,40 @@ MESSAGES
 /* line 100, ../scss/_messages.scss */
 .avatar {
   transform: translateY(50%);
+  margin-bottom: 60px;
   display: inline-block;
   text-align: center;
 }
-/* line 104, ../scss/_messages.scss */
+/* line 105, ../scss/_messages.scss */
 .avatar img {
   height: 80px;
   width: 80px;
   display: block;
 }
-/* line 110, ../scss/_messages.scss */
+/* line 111, ../scss/_messages.scss */
 .avatar i {
   display: block;
   font-style: normal;
 }
 
-/* line 115, ../scss/_messages.scss */
+/* line 116, ../scss/_messages.scss */
 .message.self .avatar {
   margin-right: 12px;
 }
 
-/* line 119, ../scss/_messages.scss */
+/* line 120, ../scss/_messages.scss */
 .message:not(.self) {
   margin-left: 12px;
 }
 
-/* line 123, ../scss/_messages.scss */
+/* line 124, ../scss/_messages.scss */
 .message.self span {
   background-color: #1f96fb;
   color: #fff;
   margin-right: 12px;
 }
 
-/* line 129, ../scss/_messages.scss */
+/* line 130, ../scss/_messages.scss */
 .message.self span::after {
   display: block;
   content: ' ';
@@ -154,7 +155,7 @@ MESSAGES
   border-left: 12px solid #1f96fb;
 }
 
-/* line 145, ../scss/_messages.scss */
+/* line 146, ../scss/_messages.scss */
 #inputPane {
   padding: .5em 12px;
   background-color: #efefef;
@@ -167,19 +168,19 @@ MESSAGES
   z-index: 1000;
 }
 
-/* line 157, ../scss/_messages.scss */
+/* line 158, ../scss/_messages.scss */
 .indicator span::before,
 .indicator span::after {
   display: none !important;
 }
 
-/* line 162, ../scss/_messages.scss */
+/* line 163, ../scss/_messages.scss */
 .indicator {
   text-align: right;
   margin-right: 12px;
 }
 
-/* line 167, ../scss/_messages.scss */
+/* line 168, ../scss/_messages.scss */
 input {
   font-size: 1em;
   border-radius: 5px;
@@ -187,13 +188,13 @@ input {
   border: 1px solid #ccc;
 }
 
-/* line 174, ../scss/_messages.scss */
+/* line 175, ../scss/_messages.scss */
 input[type="text"] {
   padding: .5em;
   width: 100%;
 }
 
-/* line 179, ../scss/_messages.scss */
+/* line 180, ../scss/_messages.scss */
 input[type="submit"] {
   background-color: #1f96fb;
   color: #fff;
@@ -205,18 +206,18 @@ input[type="submit"] {
   border-radius: 100px;
 }
 
-/* line 190, ../scss/_messages.scss */
+/* line 191, ../scss/_messages.scss */
 input:focus {
   outline: none;
   box-shadow: none;
 }
 
-/* line 195, ../scss/_messages.scss */
+/* line 196, ../scss/_messages.scss */
 [hidden] {
   display: none !important;
 }
 
-/* line 199, ../scss/_messages.scss */
+/* line 200, ../scss/_messages.scss */
 input[disabled] {
   border-color: #eee;
   color: #eee;
@@ -2075,8 +2076,9 @@ HEADER
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
   z-index: 99;
+  height: 0;
 }
-/* line 195, ../scss/app.scss */
+/* line 196, ../scss/app.scss */
 .header_container h1, .header_container h2 {
   color: #f5f6f7;
   margin-bottom: 50px;
@@ -2085,7 +2087,7 @@ HEADER
 /*======================================
 CHOOSE YOUR ACT
 ======================================*/
-/* line 205, ../scss/app.scss */
+/* line 206, ../scss/app.scss */
 video#cya_bgvid {
   position: fixed;
   top: 50%;
@@ -2100,7 +2102,7 @@ video#cya_bgvid {
   background-size: cover;
 }
 
-/* line 219, ../scss/app.scss */
+/* line 220, ../scss/app.scss */
 .intro_container {
   display: block;
   position: absolute;
@@ -2111,19 +2113,19 @@ video#cya_bgvid {
   z-index: 99;
   margin-left: 10px;
 }
-/* line 229, ../scss/app.scss */
+/* line 230, ../scss/app.scss */
 .intro_container h1 {
   color: #f5f6f7;
   font-size: 50px;
 }
-/* line 234, ../scss/app.scss */
+/* line 235, ../scss/app.scss */
 .intro_container p {
   font-size: 30px;
   line-height: 38px;
   color: #f5f6f7;
 }
 
-/* line 241, ../scss/app.scss */
+/* line 242, ../scss/app.scss */
 .intros {
   position: fixed;
   top: 0;
@@ -2131,14 +2133,14 @@ video#cya_bgvid {
   display: block;
   height: 100%;
 }
-/* line 248, ../scss/app.scss */
+/* line 249, ../scss/app.scss */
 .intros .intro_left {
   width: 50%;
   left: 0;
   height: 100%;
   position: absolute;
 }
-/* line 254, ../scss/app.scss */
+/* line 255, ../scss/app.scss */
 .intros .intro_left:before {
   content: "";
   position: absolute;
@@ -2149,14 +2151,14 @@ video#cya_bgvid {
   height: 100%;
   display: block;
 }
-/* line 259, ../scss/app.scss */
+/* line 260, ../scss/app.scss */
 .intros .intro_right {
   width: 50%;
   right: 0;
   height: 100%;
   position: absolute;
 }
-/* line 265, ../scss/app.scss */
+/* line 266, ../scss/app.scss */
 .intros .intro_right:before {
   content: "";
   position: absolute;
@@ -2171,7 +2173,7 @@ video#cya_bgvid {
 /*======================================
 INTRO VIDEO
 ======================================*/
-/* line 275, ../scss/app.scss */
+/* line 276, ../scss/app.scss */
 .fullscreen-bg {
   position: fixed;
   top: 0;
@@ -2186,12 +2188,12 @@ INTRO VIDEO
   transition: all 1s ease-in-out;
 }
 
-/* line 286, ../scss/app.scss */
+/* line 287, ../scss/app.scss */
 .fullscreen-bg.move_down_vid {
   bottom: -100%;
 }
 
-/* line 290, ../scss/app.scss */
+/* line 291, ../scss/app.scss */
 #bgvid {
   position: absolute;
   top: 0;
@@ -2203,7 +2205,7 @@ INTRO VIDEO
 /*======================================
 SUMMARY VIDEO
 ======================================*/
-/* line 302, ../scss/app.scss */
+/* line 303, ../scss/app.scss */
 .summary_video {
   position: fixed;
   top: 0;
@@ -2220,13 +2222,14 @@ SUMMARY VIDEO
   opacity: 0;
 }
 
-/* line 314, ../scss/app.scss */
+/* line 315, ../scss/app.scss */
 .summary_video.show {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
+  z-index: 99999;
 }
 
-/* line 318, ../scss/app.scss */
+/* line 320, ../scss/app.scss */
 #bgvid {
   position: absolute;
   top: 0;
@@ -2238,7 +2241,7 @@ SUMMARY VIDEO
 /*======================================
 CHOOSE YOUR STORY
 ======================================*/
-/* line 330, ../scss/app.scss */
+/* line 332, ../scss/app.scss */
 div#choose_your_story {
   position: absolute;
   display: block;
@@ -2250,17 +2253,17 @@ div#choose_your_story {
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
 }
-/* line 338, ../scss/app.scss */
+/* line 340, ../scss/app.scss */
 div#choose_your_story.header_transform {
   height: 10%;
 }
 
-/* line 343, ../scss/app.scss */
+/* line 345, ../scss/app.scss */
 div#choose_your_story.move_down {
   transform: translateY(0%);
 }
 
-/* line 347, ../scss/app.scss */
+/* line 349, ../scss/app.scss */
 .cys_split_container {
   position: relative;
   overflow-x: hidden;
@@ -2268,7 +2271,7 @@ div#choose_your_story.move_down {
   width: 100%;
 }
 
-/* line 354, ../scss/app.scss */
+/* line 356, ../scss/app.scss */
 .cys_side {
   height: 100%;
   position: fixed;
@@ -2276,7 +2279,7 @@ div#choose_your_story.move_down {
   background-size: cover;
   background-position: 60% 0;
 }
-/* line 361, ../scss/app.scss */
+/* line 363, ../scss/app.scss */
 .cys_side a {
   display: block;
   position: absolute;
@@ -2286,7 +2289,7 @@ div#choose_your_story.move_down {
   height: 100%;
   z-index: 9999;
 }
-/* line 371, ../scss/app.scss */
+/* line 373, ../scss/app.scss */
 .cys_side.cys_he_container {
   width: 50%;
   left: 0;
@@ -2294,7 +2297,7 @@ div#choose_your_story.move_down {
   z-index: 9999;
   cursor: pointer;
 }
-/* line 378, ../scss/app.scss */
+/* line 380, ../scss/app.scss */
 .cys_side.cys_he_container:before {
   content: "";
   position: absolute;
@@ -2310,7 +2313,7 @@ div#choose_your_story.move_down {
   transition: all 0.5s ease-in-out;
   z-index: 99;
 }
-/* line 385, ../scss/app.scss */
+/* line 387, ../scss/app.scss */
 .cys_side.cys_she_container {
   width: 50%;
   right: 0;
@@ -2318,7 +2321,7 @@ div#choose_your_story.move_down {
   z-index: 9999;
   cursor: pointer;
 }
-/* line 392, ../scss/app.scss */
+/* line 394, ../scss/app.scss */
 .cys_side.cys_she_container:before {
   content: "";
   position: absolute;
@@ -2335,14 +2338,14 @@ div#choose_your_story.move_down {
   z-index: 99;
 }
 
-/* line 402, ../scss/app.scss */
+/* line 404, ../scss/app.scss */
 .cys_he_container img, .cys_she_container img {
   display: block;
   width: 100%;
   height: 100%;
 }
 
-/* line 410, ../scss/app.scss */
+/* line 412, ../scss/app.scss */
 .cys_text_overlay {
   position: absolute;
   top: 40%;
@@ -2356,17 +2359,17 @@ div#choose_your_story.move_down {
   -webkit-transition: top 1s ease-in-out;
   transition: top 1s ease-in-out;
 }
-/* line 420, ../scss/app.scss */
+/* line 422, ../scss/app.scss */
 .cys_text_overlay img {
   display: inline-block;
   width: auto;
   height: auto;
 }
-/* line 426, ../scss/app.scss */
+/* line 428, ../scss/app.scss */
 .cys_text_overlay h2 {
   display: inline-block;
 }
-/* line 430, ../scss/app.scss */
+/* line 432, ../scss/app.scss */
 .cys_text_overlay p {
   position: relative;
   top: 20px;
@@ -2378,16 +2381,16 @@ div#choose_your_story.move_down {
   transition: all 0.5s ease-in-out;
 }
 
-/* line 438, ../scss/app.scss */
+/* line 440, ../scss/app.scss */
 .header_transform .cys_text_overlay {
   top: 0%;
 }
-/* line 441, ../scss/app.scss */
+/* line 443, ../scss/app.scss */
 .header_transform .cys_text_overlay p {
   display: none;
 }
 
-/* line 447, ../scss/app.scss */
+/* line 449, ../scss/app.scss */
 .cys_he_container:hover:before {
   content: "";
   position: absolute;
@@ -2398,14 +2401,14 @@ div#choose_your_story.move_down {
   height: 100%;
   display: block;
 }
-/* line 451, ../scss/app.scss */
+/* line 453, ../scss/app.scss */
 .cys_he_container:hover .cys_text_overlay p {
   top: 0px;
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
 
-/* line 458, ../scss/app.scss */
+/* line 460, ../scss/app.scss */
 .cys_she_container:hover:before {
   content: "";
   position: absolute;
@@ -2416,14 +2419,14 @@ div#choose_your_story.move_down {
   height: 100%;
   display: block;
 }
-/* line 461, ../scss/app.scss */
+/* line 463, ../scss/app.scss */
 .cys_she_container:hover .cys_text_overlay p {
   top: 0px;
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
 
-/* line 467, ../scss/app.scss */
+/* line 469, ../scss/app.scss */
 .cys_side.header_transform.cys_he_container:before {
   content: "";
   position: absolute;
@@ -2439,7 +2442,7 @@ div#choose_your_story.move_down {
   transition: all 1s ease-in-out;
 }
 
-/* line 472, ../scss/app.scss */
+/* line 474, ../scss/app.scss */
 .cys_side.header_transform.cys_she_container:before {
   content: "";
   position: absolute;
@@ -2451,7 +2454,7 @@ div#choose_your_story.move_down {
   display: block;
 }
 
-/* line 478, ../scss/app.scss */
+/* line 480, ../scss/app.scss */
 .she_toggled .cys_side.header_transform.cys_he_container:before {
   content: "";
   position: absolute;
@@ -2462,7 +2465,7 @@ div#choose_your_story.move_down {
   height: 100%;
   display: block;
 }
-/* line 482, ../scss/app.scss */
+/* line 484, ../scss/app.scss */
 .she_toggled .cys_side.header_transform.cys_she_container:before {
   content: "";
   position: absolute;
@@ -2475,7 +2478,7 @@ div#choose_your_story.move_down {
 }
 
 /*=== Animate Header ===*/
-/* line 491, ../scss/app.scss */
+/* line 493, ../scss/app.scss */
 .cys_she_container.animated:before {
   -webkit-animation: header_color_notification 1s infinite ease-in-out;
   -moz-animation: header_color_notification 1s infinite ease-in-out;
@@ -2528,11 +2531,11 @@ div#choose_your_story.move_down {
   }
 }
 /*=== Flexslider ===*/
-/* line 505, ../scss/app.scss */
+/* line 507, ../scss/app.scss */
 .cys_split_container .flexslider {
   height: 100%;
 }
-/* line 509, ../scss/app.scss */
+/* line 511, ../scss/app.scss */
 .cys_split_container ul.slides {
   margin: 0px;
   left: 0;
@@ -2542,7 +2545,7 @@ div#choose_your_story.move_down {
   height: 100%;
   width: 100%;
 }
-/* line 518, ../scss/app.scss */
+/* line 520, ../scss/app.scss */
 .cys_split_container ul.slides li {
   background-size: cover !important;
   height: 100%;

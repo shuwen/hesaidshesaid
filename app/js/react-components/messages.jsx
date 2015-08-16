@@ -75,16 +75,16 @@ var Messenger = React.createClass({
 		});
 	},
 
-	componentWillUpdate: function() {
-	  var messagePane = this.getDOMNode().querySelector('#messagePane');
-	  this.shouldScrollBottom = messagePane.scrollTop + messagePane.offsetHeight === messagePane.scrollHeight;
-	},
+	// componentWillUpdate: function() {
+	//   var messagePane = this.getDOMNode().querySelector('#messagePane');
+	//   this.shouldScrollBottom = messagePane.scrollTop + messagePane.offsetHeight === messagePane.scrollHeight;
+	// },
 	 
 	componentDidUpdate: function() {
-	  if (this.shouldScrollBottom) {
+	  // if (this.shouldScrollBottom) {
 	    var messagePane = this.getDOMNode().querySelector('#messagePane');
 	    messagePane.scrollTop = messagePane.scrollHeight
-	  }
+	  // }
 	},
 
 	getInitialState: function() {
@@ -148,7 +148,7 @@ var Messenger = React.createClass({
 				self: true,
 				avatar: '../../img/narrator_icon_chat.png',
 				sender: 'You',
-			}, true, this.state.answerCallback);
+			}, this.state.answerCallback, true);
 
 			if(this.questionBuffer) {
 				this.setState({

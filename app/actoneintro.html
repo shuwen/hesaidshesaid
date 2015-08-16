@@ -58,7 +58,7 @@
 
     <div class="summary_video">
 
-      <video id="bgvid">
+      <video id="bgvid" controls>
         <source src="video/act1_background.webm" type="video/webm">
         <source src="video/act1_background.mp4" type="video/mp4">
       </video>
@@ -100,7 +100,7 @@
         audioNode.addEventListener('ended', function() {
           document.querySelector('.cys_she_container').classList.add('animated');
           sueMessenger.post({
-            message: 'https://raw.githubusercontent.com/tholman/elevator.js/master/demo/music/elevator.mp3',
+            message: 'audio/Number_Exchange_She_ALT_1-2.mp3',
             contentType: 'audio',
             self: false,
             avatar: 'img/she_icon_chat.png',
@@ -212,11 +212,16 @@
 
         setTimeout(function() {
           johnMessenger.prompt("How do you think she will respond?", function() {
-            setTimeout(nightCapScript,1000);
+            setTimeout(function() { playEndVid(); },1000);
           });
         },interval*6);
 
         // setTimeout(function() {  }, interval*7);
+      };
+
+      var playEndVid = function() {
+        console.log('yes');
+        $('.summary_video').addClass('show');
       };
 
       narratorMessage(johnMessenger,'At the time of meeting he was in an open relationship.',function() {firstJohnMessage = this});
@@ -229,7 +234,7 @@
       // }, false);
 
       johnMessenger.post({
-        message: 'https://raw.githubusercontent.com/tholman/elevator.js/master/demo/music/elevator.mp3',
+        message: 'audio/Number_Exchange_He_ALT_1-2.mp3',
         contentType: 'audio',
         self: false,
         avatar: 'img/narrator_icon_chat.png',
