@@ -274,18 +274,20 @@ INTRO VIDEO
 ======================================*/
 
 .fullscreen-bg {
+	background-color: #000;
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     overflow: hidden;
-    z-index: -100;
+    z-index: 999999;
     @include transition(all 1s ease-in-out);
 }
 
 .fullscreen-bg.move_down_vid {
     bottom: -100%;
+    z-index: -1000;
 }
 
 #bgvid {
@@ -301,6 +303,7 @@ SUMMARY VIDEO
 ======================================*/
 
 .summary_video {
+	background: #000;
     position: fixed;
     top: 0;
     right: 0;

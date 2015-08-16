@@ -11,14 +11,14 @@
   </head>
   <body>
 
-    <!-- <div class="fullscreen-bg">
+    <div class="fullscreen-bg">
 
       <video autoplay id="bgvid">
         <source src="video/act1_background.webm" type="video/webm">
         <source src="video/act1_background.mp4" type="video/mp4">
       </video>
 
-    </div> -->
+    </div>
 
     <div id="choose_your_story">
 
@@ -59,8 +59,7 @@
     <div class="summary_video">
 
       <video id="bgvid" controls>
-        <source src="video/act1_background.webm" type="video/webm">
-        <source src="video/act1_background.mp4" type="video/mp4">
+        <source src="video/Closing_Video_081615_5pm.mov" type="video/mp4">
       </video>
 
     </div>
@@ -115,7 +114,9 @@
         audioNode.addEventListener('play', function() {
           host.setBackgroundImage("linear-gradient(rgba(235,93,75,.2),rgba(235,93,75,.2)), url('img/NumberEx3.jpeg')");
         });
-        audioNode.play();
+        document.querySelector('.cys_she_container').addEventListener('click', function() {
+          audioNode.play();
+        })
         audioNode.addEventListener('ended', function() {
           flipToJohn();
         });
@@ -131,7 +132,7 @@
           self: false,
         };
         if(callback) msg.callback = callback;
-        target.post(msg);
+        target.post(msg,callback,true);
       };
 
       var johnMessage = function(target,message,callback) {
@@ -203,7 +204,7 @@
           johnMessenger.post({
             avatar: "img/narrator_icon_chat.png",
             sender: "Narrator",
-            message: "johnurl3",
+            message: "audio/First_Impressions_He_ALT_1-2.mp3",
             contentType: 'audio',
             self: false,
           })
@@ -219,12 +220,29 @@
         // setTimeout(function() {  }, interval*7);
       };
 
+$('#bgvid').on('ended',function() {    
+
+    $( "#choose_your_story" ).addClass("move_down");
+    $( ".fullscreen-bg" ).addClass("move_down_vid");
+
+    narratorMessage(johnMessenger,'At the time of meeting he was in an open relationship.',function() {firstJohnMessage = this});
+
+
+johnMessenger.post({
+        message: 'audio/Number_Exchange_He_ALT_1-2.mp3',
+        contentType: 'audio',
+        self: false,
+        avatar: 'img/narrator_icon_chat.png',
+        sender: 'Narrator'
+      }, johnFirstAlert, true);
+
+  }); 
+
       var playEndVid = function() {
         console.log('yes');
         $('.summary_video').addClass('show');
       };
 
-      narratorMessage(johnMessenger,'At the time of meeting he was in an open relationship.',function() {firstJohnMessage = this});
       // johnMessenger.post({
       //   message: 'At the time of meeting he was in an open relationship.',
       //   contentType: 'text',
@@ -233,13 +251,7 @@
       //   firstJohnMessage = this;
       // }, false);
 
-      johnMessenger.post({
-        message: 'audio/Number_Exchange_He_ALT_1-2.mp3',
-        contentType: 'audio',
-        self: false,
-        avatar: 'img/narrator_icon_chat.png',
-        sender: 'Narrator'
-      }, johnFirstAlert, false);
+      
 
       var nightCapScript = function() {
         johnMessenger.clear();

@@ -146,7 +146,7 @@ var Messenger = React.createClass({
 				message: this.state.inputBuffer,
 				contentType: 'text',
 				self: true,
-				avatar: '../../img/narrator_icon_chat.png',
+				avatar: '/pov/app/img/narrator_icon_chat.png',
 				sender: 'You',
 			}, this.state.answerCallback, true);
 
@@ -186,7 +186,7 @@ var Messenger = React.createClass({
 				callback: callback
 			}
 		}
-		var notifSound = new Audio('../../audio/TextSFX_3.mp3');
+		var notifSound = new Audio('/pov/app/audio/TextSFX_3.mp3');
 
 		this.setState({
 			messages: this.state.messages.concat([newPost])
@@ -199,7 +199,7 @@ var Messenger = React.createClass({
 		this.post({
 			message: question,
 			contentType: 'text',
-			avatar: '../../img/narrator_icon_chat.png',
+			avatar: '/pov/app/img/narrator_icon_chat.png',
 			sender: 'Narrator',
 			self: false
 		});

@@ -27,7 +27,7 @@ gulp.task('lr-server', function() {
 // start local http server for development
 gulp.task('http-server', function() {
     connect()
-    .use(require('connect-livereload')())
+    // .use(require('connect-livereload')())
     .use(connect.static(APP_DIR))
     .listen(WEB_PORT);
 
@@ -36,14 +36,14 @@ gulp.task('http-server', function() {
 
 // start local http server with watch and livereload set up
 gulp.task('server', function() {
-    gulp.run('lr-server');
+    // gulp.run('lr-server');
 
     var watchFiles = ['app/**/*.html', 'app/**/*.js', 'app/**/*.css'];
 
     gulp.watch(watchFiles, function(e) {
         console.log('Files changed. Reloading...');
         gulp.src(watchFiles)
-        .pipe(livereload(lrs));
+        // .pipe(livereload(lrs));
     });
 
     gulp.run('http-server');

@@ -8,12 +8,7 @@ $(document).ready(function() {
 
 	/*=== Move Intro Screen into He/She Select ===*/
 
-	/* $('#bgvid').on('ended',function() {    
-
-		$( "#choose_your_story" ).addClass("move_down");
-		$( ".fullscreen-bg" ).addClass("move_down_vid");
-
-	}); */
+	 
 
 	$('.cys_he_container').click(function() {
 		$('#choose_your_story').addClass('header_transform');
