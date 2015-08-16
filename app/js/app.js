@@ -17,6 +17,7 @@ $(document).ready(function() {
 
 	$('.cys_he_container').click(function() {
 		$('.cys_side').addClass('header_transform');
+		$('#choose_your_story').addClass('header_transform');
 		$('.fullscreen-bg').addClass('hide');
 		$('.header_container').addClass('fadeOut');
 		$('.main_screen_container').addClass('show');

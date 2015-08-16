@@ -2161,13 +2161,17 @@ div#choose_your_story {
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
 }
+/* line 290, ../scss/app.scss */
+div#choose_your_story.header_transform {
+  height: 10%;
+}
 
-/* line 291, ../scss/app.scss */
+/* line 295, ../scss/app.scss */
 div#choose_your_story.move_down {
   transform: translateY(0%);
 }
 
-/* line 295, ../scss/app.scss */
+/* line 299, ../scss/app.scss */
 .cys_split_container {
   position: relative;
   overflow-x: hidden;
@@ -2175,19 +2179,15 @@ div#choose_your_story.move_down {
   width: 100%;
 }
 
-/* line 302, ../scss/app.scss */
+/* line 306, ../scss/app.scss */
 .cys_side {
   height: 100%;
   position: fixed;
   top: 0;
   background-size: cover;
   background-position: 60% 0;
-  -moz-transition: height 1s ease-in-out;
-  -o-transition: height 1s ease-in-out;
-  -webkit-transition: height 1s ease-in-out;
-  transition: height 1s ease-in-out;
 }
-/* line 310, ../scss/app.scss */
+/* line 313, ../scss/app.scss */
 .cys_side a {
   display: block;
   position: absolute;
@@ -2197,17 +2197,13 @@ div#choose_your_story.move_down {
   height: 100%;
   z-index: 9999;
 }
-/* line 320, ../scss/app.scss */
-.cys_side.header_transform {
-  height: 10%;
-}
-/* line 324, ../scss/app.scss */
+/* line 323, ../scss/app.scss */
 .cys_side.cys_he_container {
   width: 50%;
   left: 0;
   background-image: url("../img/he_intro.jpg");
 }
-/* line 329, ../scss/app.scss */
+/* line 328, ../scss/app.scss */
 .cys_side.cys_he_container:before {
   content: "";
   position: absolute;
@@ -2223,13 +2219,13 @@ div#choose_your_story.move_down {
   transition: all 0.5s ease-in-out;
   z-index: 99;
 }
-/* line 336, ../scss/app.scss */
+/* line 335, ../scss/app.scss */
 .cys_side.cys_she_container {
   width: 50%;
   right: 0;
   background-image: url("../img/she_intro.jpg");
 }
-/* line 341, ../scss/app.scss */
+/* line 340, ../scss/app.scss */
 .cys_side.cys_she_container:before {
   content: "";
   position: absolute;
@@ -2246,14 +2242,14 @@ div#choose_your_story.move_down {
   z-index: 99;
 }
 
-/* line 351, ../scss/app.scss */
+/* line 350, ../scss/app.scss */
 .cys_he_container img, .cys_she_container img {
   display: block;
   width: 100%;
   height: 100%;
 }
 
-/* line 359, ../scss/app.scss */
+/* line 358, ../scss/app.scss */
 .cys_text_overlay {
   position: absolute;
   top: 40%;
@@ -2267,7 +2263,7 @@ div#choose_your_story.move_down {
   -webkit-transition: top 1s ease-in-out;
   transition: top 1s ease-in-out;
 }
-/* line 369, ../scss/app.scss */
+/* line 368, ../scss/app.scss */
 .cys_text_overlay p {
   position: relative;
   top: 20px;
@@ -2279,12 +2275,12 @@ div#choose_your_story.move_down {
   transition: all 0.5s ease-in-out;
 }
 
-/* line 377, ../scss/app.scss */
+/* line 376, ../scss/app.scss */
 .header_transform .cys_text_overlay {
   top: 0%;
 }
 
-/* line 382, ../scss/app.scss */
+/* line 381, ../scss/app.scss */
 .cys_he_container:hover:before {
   content: "";
   position: absolute;
@@ -2295,14 +2291,14 @@ div#choose_your_story.move_down {
   height: 100%;
   display: block;
 }
-/* line 386, ../scss/app.scss */
+/* line 385, ../scss/app.scss */
 .cys_he_container:hover .cys_text_overlay p {
   top: 0px;
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
 
-/* line 393, ../scss/app.scss */
+/* line 392, ../scss/app.scss */
 .cys_she_container:hover:before {
   content: "";
   position: absolute;
@@ -2313,14 +2309,14 @@ div#choose_your_story.move_down {
   height: 100%;
   display: block;
 }
-/* line 396, ../scss/app.scss */
+/* line 395, ../scss/app.scss */
 .cys_she_container:hover .cys_text_overlay p {
   top: 0px;
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
 
-/* line 402, ../scss/app.scss */
+/* line 401, ../scss/app.scss */
 .cys_side.header_transform.cys_she_container:before {
   content: "";
   position: absolute;
@@ -2333,11 +2329,11 @@ div#choose_your_story.move_down {
 }
 
 /*=== Flexslider ===*/
-/* line 410, ../scss/app.scss */
+/* line 409, ../scss/app.scss */
 .cys_split_container .flexslider {
   height: 100%;
 }
-/* line 414, ../scss/app.scss */
+/* line 413, ../scss/app.scss */
 .cys_split_container ul.slides {
   margin: 0px;
   left: 0;
@@ -2347,7 +2343,7 @@ div#choose_your_story.move_down {
   height: 100%;
   width: 100%;
 }
-/* line 423, ../scss/app.scss */
+/* line 422, ../scss/app.scss */
 .cys_split_container ul.slides li {
   background-size: cover !important;
   height: 100%;

@@ -286,6 +286,10 @@ div#choose_your_story {
     height: 100%;
     transform: translateY(-100%);
     @include transition(all 1s ease-in-out);
+
+    &.header_transform {
+		height: 10%;
+	}
 }
 
 div#choose_your_story.move_down {
@@ -305,7 +309,6 @@ div#choose_your_story.move_down {
 	top: 0;
 	background-size: cover;
 	background-position: 60% 0;
-	@include transition(height 1s ease-in-out);
 
 	a {
 	    display: block;
@@ -315,10 +318,6 @@ div#choose_your_story.move_down {
 	    width: 100%;
 	    height: 100%;
 	    z-index: 9999;
-	}
-
-	&.header_transform {
-		height: 10%;
 	}
 
 	&.cys_he_container {
