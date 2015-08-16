@@ -1954,16 +1954,30 @@ MAIN SCREEN
 ======================================*/
 /* line 119, ../scss/app.scss */
 .main_screen_container {
-  display: block;
   top: 63px;
   position: relative;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -moz-transition: opacity 2s ease-in-out;
+  -o-transition: opacity 2s ease-in-out;
+  -webkit-transition: opacity 2s ease-in-out;
+  transition: opacity 2s ease-in-out;
+  z-index: -100;
+}
+
+/* line 127, ../scss/app.scss */
+.main_screen_container.show {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+  z-index: 999;
+  background-color: rgba(68, 135, 199, 0.5);
 }
 
 /*======================================
 COMPONENTS
 ======================================*/
 /*=== Buttons ===*/
-/* line 131, ../scss/app.scss */
+/* line 139, ../scss/app.scss */
 a.primary_button {
   display: inline-block;
   background-color: #000;
@@ -1973,7 +1987,7 @@ a.primary_button {
   text-transform: uppercase;
 }
 
-/* line 140, ../scss/app.scss */
+/* line 148, ../scss/app.scss */
 .hide {
   display: none;
 }
@@ -1981,7 +1995,7 @@ a.primary_button {
 /*======================================
 HEADER
 ======================================*/
-/* line 148, ../scss/app.scss */
+/* line 156, ../scss/app.scss */
 .header_container {
   display: block;
   position: fixed;
@@ -1997,12 +2011,12 @@ HEADER
   -webkit-transition: opacity 1s ease-in-out;
   transition: opacity 1s ease-in-out;
 }
-/* line 159, ../scss/app.scss */
+/* line 167, ../scss/app.scss */
 .header_container.fadeOut {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
-/* line 163, ../scss/app.scss */
+/* line 171, ../scss/app.scss */
 .header_container h1 {
   color: #f5f6f7;
 }
@@ -2010,7 +2024,7 @@ HEADER
 /*======================================
 CHOOSE YOUR ACT
 ======================================*/
-/* line 172, ../scss/app.scss */
+/* line 180, ../scss/app.scss */
 video#cya_bgvid {
   position: fixed;
   top: 50%;
@@ -2026,7 +2040,7 @@ video#cya_bgvid {
   background-size: cover;
 }
 
-/* line 187, ../scss/app.scss */
+/* line 195, ../scss/app.scss */
 .intro_container {
   display: block;
   position: absolute;
@@ -2036,18 +2050,18 @@ video#cya_bgvid {
   padding: 0px 200px;
   z-index: 99;
 }
-/* line 196, ../scss/app.scss */
+/* line 204, ../scss/app.scss */
 .intro_container h1 {
   color: #f5f6f7;
 }
-/* line 200, ../scss/app.scss */
+/* line 208, ../scss/app.scss */
 .intro_container p {
   font-size: 30px;
   line-height: 38px;
   color: #f5f6f7;
 }
 
-/* line 207, ../scss/app.scss */
+/* line 215, ../scss/app.scss */
 .intros {
   position: fixed;
   top: 0;
@@ -2055,14 +2069,14 @@ video#cya_bgvid {
   display: block;
   height: 100%;
 }
-/* line 214, ../scss/app.scss */
+/* line 222, ../scss/app.scss */
 .intros .intro_left {
   width: 50%;
   left: 0;
   height: 100%;
   position: absolute;
 }
-/* line 220, ../scss/app.scss */
+/* line 228, ../scss/app.scss */
 .intros .intro_left:before {
   content: "";
   position: absolute;
@@ -2073,14 +2087,14 @@ video#cya_bgvid {
   height: 100%;
   display: block;
 }
-/* line 225, ../scss/app.scss */
+/* line 233, ../scss/app.scss */
 .intros .intro_right {
   width: 50%;
   right: 0;
   height: 100%;
   position: absolute;
 }
-/* line 231, ../scss/app.scss */
+/* line 239, ../scss/app.scss */
 .intros .intro_right:before {
   content: "";
   position: absolute;
@@ -2095,7 +2109,7 @@ video#cya_bgvid {
 /*======================================
 INTRO VIDEO
 ======================================*/
-/* line 241, ../scss/app.scss */
+/* line 249, ../scss/app.scss */
 .fullscreen-bg {
   position: fixed;
   top: 0;
@@ -2110,12 +2124,12 @@ INTRO VIDEO
   transition: all 1s ease-in-out;
 }
 
-/* line 252, ../scss/app.scss */
+/* line 260, ../scss/app.scss */
 .fullscreen-bg.move_down_vid {
   bottom: -100%;
 }
 
-/* line 256, ../scss/app.scss */
+/* line 264, ../scss/app.scss */
 #bgvid {
   position: absolute;
   top: 0;
@@ -2127,7 +2141,7 @@ INTRO VIDEO
 /*======================================
 CHOOSE YOUR STORY
 ======================================*/
-/* line 268, ../scss/app.scss */
+/* line 276, ../scss/app.scss */
 div#choose_your_story {
   position: absolute;
   display: block;
@@ -2140,12 +2154,12 @@ div#choose_your_story {
   transition: all 1s ease-in-out;
 }
 
-/* line 277, ../scss/app.scss */
+/* line 285, ../scss/app.scss */
 div#choose_your_story.move_down {
   transform: translateY(0%);
 }
 
-/* line 281, ../scss/app.scss */
+/* line 289, ../scss/app.scss */
 .cys_split_container {
   position: relative;
   overflow-x: hidden;
@@ -2153,7 +2167,7 @@ div#choose_your_story.move_down {
   width: 100%;
 }
 
-/* line 288, ../scss/app.scss */
+/* line 296, ../scss/app.scss */
 .cys_side {
   height: 100%;
   position: fixed;
@@ -2165,7 +2179,7 @@ div#choose_your_story.move_down {
   -webkit-transition: height 1s ease-in-out;
   transition: height 1s ease-in-out;
 }
-/* line 296, ../scss/app.scss */
+/* line 304, ../scss/app.scss */
 .cys_side a {
   display: block;
   position: absolute;
@@ -2175,17 +2189,17 @@ div#choose_your_story.move_down {
   height: 100%;
   z-index: 9999;
 }
-/* line 306, ../scss/app.scss */
+/* line 314, ../scss/app.scss */
 .cys_side.header_transform {
   height: 10%;
 }
-/* line 310, ../scss/app.scss */
+/* line 318, ../scss/app.scss */
 .cys_side.cys_he_container {
   width: 50%;
   left: 0;
   background-image: url("../img/he_intro.jpg");
 }
-/* line 315, ../scss/app.scss */
+/* line 323, ../scss/app.scss */
 .cys_side.cys_he_container:before {
   content: "";
   position: absolute;
@@ -2201,13 +2215,13 @@ div#choose_your_story.move_down {
   transition: all 0.5s ease-in-out;
   z-index: 99;
 }
-/* line 322, ../scss/app.scss */
+/* line 330, ../scss/app.scss */
 .cys_side.cys_she_container {
   width: 50%;
   right: 0;
   background-image: url("../img/she_intro.jpg");
 }
-/* line 327, ../scss/app.scss */
+/* line 335, ../scss/app.scss */
 .cys_side.cys_she_container:before {
   content: "";
   position: absolute;
@@ -2224,14 +2238,14 @@ div#choose_your_story.move_down {
   z-index: 99;
 }
 
-/* line 337, ../scss/app.scss */
+/* line 345, ../scss/app.scss */
 .cys_he_container img, .cys_she_container img {
   display: block;
   width: 100%;
   height: 100%;
 }
 
-/* line 345, ../scss/app.scss */
+/* line 353, ../scss/app.scss */
 .cys_text_overlay {
   position: absolute;
   top: 40%;
@@ -2245,7 +2259,7 @@ div#choose_your_story.move_down {
   -webkit-transition: top 1s ease-in-out;
   transition: top 1s ease-in-out;
 }
-/* line 355, ../scss/app.scss */
+/* line 363, ../scss/app.scss */
 .cys_text_overlay p {
   position: relative;
   top: 20px;
@@ -2257,12 +2271,12 @@ div#choose_your_story.move_down {
   transition: all 0.5s ease-in-out;
 }
 
-/* line 363, ../scss/app.scss */
+/* line 371, ../scss/app.scss */
 .header_transform .cys_text_overlay {
   top: 0%;
 }
 
-/* line 368, ../scss/app.scss */
+/* line 376, ../scss/app.scss */
 .cys_he_container:hover:before {
   content: "";
   position: absolute;
@@ -2273,14 +2287,14 @@ div#choose_your_story.move_down {
   height: 100%;
   display: block;
 }
-/* line 372, ../scss/app.scss */
+/* line 380, ../scss/app.scss */
 .cys_he_container:hover .cys_text_overlay p {
   top: 0px;
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
 
-/* line 379, ../scss/app.scss */
+/* line 387, ../scss/app.scss */
 .cys_she_container:hover:before {
   content: "";
   position: absolute;
@@ -2291,14 +2305,14 @@ div#choose_your_story.move_down {
   height: 100%;
   display: block;
 }
-/* line 382, ../scss/app.scss */
+/* line 390, ../scss/app.scss */
 .cys_she_container:hover .cys_text_overlay p {
   top: 0px;
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
 
-/* line 388, ../scss/app.scss */
+/* line 396, ../scss/app.scss */
 .cys_side.header_transform.cys_she_container:before {
   content: "";
   position: absolute;
@@ -2311,11 +2325,11 @@ div#choose_your_story.move_down {
 }
 
 /*=== Flexslider ===*/
-/* line 396, ../scss/app.scss */
+/* line 404, ../scss/app.scss */
 .cys_split_container .flexslider {
   height: 100%;
 }
-/* line 400, ../scss/app.scss */
+/* line 408, ../scss/app.scss */
 .cys_split_container ul.slides {
   margin: 0px;
   left: 0;
@@ -2325,7 +2339,7 @@ div#choose_your_story.move_down {
   height: 100%;
   width: 100%;
 }
-/* line 409, ../scss/app.scss */
+/* line 417, ../scss/app.scss */
 .cys_split_container ul.slides li {
   background-size: cover !important;
   height: 100%;

@@ -5,24 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Foundation</title>
     <link rel="stylesheet" href="css/app.css" />
+    <script src="bower_components/react/react-with-addons.js"></script>
+    <script src="bower_components/react/JSXTransformer.js"></script>
     <script src="bower_components/modernizr/modernizr.js"></script>
   </head>
   <body>
 
-    <div class="fullscreen-bg">
+    <!-- <div class="fullscreen-bg">
 
       <video autoplay id="bgvid">
         <source src="video/act1_background.webm" type="video/webm">
         <source src="video/act1_background.mp4" type="video/mp4">
       </video>
 
-    </div>
+    </div> -->
 
     <div id="choose_your_story">
 
       <div class="header_container">
         <h2>He Said She Said</h2>
-        <h1>Whose Story Do You Want To Follow?</h1>
+        <h1>Whose point of view do you want to experience first?h</h1>
       </div>
 
       <div class="cys_split_container">
@@ -49,10 +51,37 @@
 
     </div>
 
+    <div class="main_screen_container">
+      <div id="message_container"></div>
+    </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/foundation/js/foundation.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/jquery.flexslider-min.js"></script>
+    <script type="text/jsx" src="js/react-components/messages.jsx"></script>
+    <script type="text/jsx">
+      window.messenger = React.render(
+        <Messenger id="messenger"></Messenger>,
+        document.getElementById('message_container')
+      );
+      // messenger.setBackground('rgba(0,0,177,.25)');
+
+      var postAlert = function() {
+        console.log('it worked');
+      }
+
+      messenger.post({
+        message: 'At the time of meeting he was in an open relationship.',
+        contentType: 'text',
+        self: false
+      }, true);
+      messenger.post({
+        message: 'https://raw.githubusercontent.com/tholman/elevator.js/master/demo/music/elevator.mp3',
+        contentType: 'audio',
+        self: false
+      }, true, postAlert);
+    </script>
   </body>
 </html>
