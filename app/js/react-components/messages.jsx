@@ -64,7 +64,8 @@ var Messenger = React.createClass({
 				// {message: '', contentType: 'video'}
 			],
 			answers: [],
-			inputBuffer: ''
+			inputBuffer: '',
+			disableInput: false,
 		}
 	},
 
@@ -92,8 +93,8 @@ var Messenger = React.createClass({
 				</div>
 				<div id="inputPane">
 					<form onSubmit={this.handleSubmit}>
-						<input id="textInput" type="text" placeholder="Type your message..." valueLink={this.linkState('inputBuffer')}></input>
-						<input type="submit" value="Send"></input>
+						<input id="textInput" type="text" placeholder="Type your message..." valueLink={this.linkState('inputBuffer')} disabled={this.state.disableInput}></input>
+						<input type="submit" value="Send" disabled={this.state.disableInput}></input>
 					</form>
 				</div>
 			</div>
@@ -155,5 +156,11 @@ var Messenger = React.createClass({
 		});
 		this.questionBuffer = question;
 	},
+
+	toggleInput: function() {
+		this.setState({
+			disableInput: !this.state.disableInput
+		});
+	}
 
 });
