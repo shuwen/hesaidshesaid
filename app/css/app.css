@@ -1,6 +1,174 @@
 /*===============================
 COLORS
 ===============================*/
+/*===============================
+MESSAGES
+===============================*/
+@keyframes typing1 {
+  0% {
+    width: 12px;
+    height: 12px;
+    margin: 0;
+  }
+  50% {
+    width: 8px;
+    height: 8px;
+    margin: 2px;
+  }
+  100% {
+    width: 8px;
+    height: 8px;
+    margin: 2px;
+  }
+}
+/* line 23, ../scss/_messages.scss */
+.hidden {
+  display: none !important;
+}
+
+/* line 27, ../scss/_messages.scss */
+.messenger {
+  border: 1px solid #eee;
+  position: relative;
+  transform: translate3d(0, 0, 0);
+  height: 600px;
+}
+
+/* line 34, ../scss/_messages.scss */
+#messagePane {
+  height: 100%;
+  max-height: 100%;
+  min-height: 100%;
+  overflow: auto;
+}
+
+/* line 41, ../scss/_messages.scss */
+.message.self {
+  text-align: right;
+}
+
+/* line 45, ../scss/_messages.scss */
+.point {
+  background-color: #ccc;
+  display: inline-block;
+  border-radius: 100px;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  height: 8px;
+  width: 8px;
+  margin: 2px;
+}
+
+/* line 56, ../scss/_messages.scss */
+.point:nth-of-type(1) {
+  animation-name: typing1;
+}
+
+/* line 60, ../scss/_messages.scss */
+.point:nth-of-type(2) {
+  animation-delay: 333ms;
+  animation-name: typing1;
+}
+
+/* line 65, ../scss/_messages.scss */
+.point:nth-of-type(3) {
+  animation-delay: 667ms;
+  animation-name: typing1;
+}
+
+/* line 70, ../scss/_messages.scss */
+.message > span {
+  background-color: #eee;
+  border-radius: 1em/1em;
+  display: inline-block;
+  margin: .25em 0;
+  position: relative;
+  padding: 1em;
+}
+
+/* line 79, ../scss/_messages.scss */
+.message:not(.self) span::before {
+  display: block;
+  content: ' ';
+  position: absolute;
+  left: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 12px solid #eee;
+}
+
+/* line 95, ../scss/_messages.scss */
+.message:not(.self) {
+  margin-left: 12px;
+}
+
+/* line 99, ../scss/_messages.scss */
+.message.self span {
+  background-color: #1f96fb;
+  color: #fff;
+  margin-right: 12px;
+}
+
+/* line 105, ../scss/_messages.scss */
+.message.self span::after {
+  display: block;
+  content: ' ';
+  position: absolute;
+  right: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 12px solid #1f96fb;
+}
+
+/* line 121, ../scss/_messages.scss */
+#inputPane {
+  padding: .25em 0;
+  width: 100%;
+  bottom: 0;
+  display: block;
+  position: fixed !important;
+  transform: translateY(100%);
+}
+
+/* line 130, ../scss/_messages.scss */
+.indicator span::before,
+.indicator span::after {
+  display: none !important;
+}
+
+/* line 135, ../scss/_messages.scss */
+.indicator {
+  text-align: right;
+  margin-right: 12px;
+}
+
+/* line 140, ../scss/_messages.scss */
+input {
+  font-size: 1em;
+  padding: .5em;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* line 147, ../scss/_messages.scss */
+input[type="text"] {
+  width: 80%;
+}
+
+/* line 151, ../scss/_messages.scss */
+input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
 /* line 364, ../bower_components/foundation/scss/foundation/components/_global.scss */
 meta.foundation-version {
   font-family: "/5.5.2/";
@@ -1686,10 +1854,40 @@ select {
   }
 }
 /*======================================
+MENU
+======================================*/
+/* line 53, ../scss/app.scss */
+.toggle_panel {
+  position: absolute;
+  width: 10%;
+  right: 0;
+  height: 100%;
+  background-color: #000;
+  cursor: pointer;
+}
+/* line 61, ../scss/app.scss */
+.toggle_panel h2 {
+  top: 40%;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
+
+/*======================================
+MAIN SCREEN
+======================================*/
+/* line 74, ../scss/app.scss */
+.main_screen_container {
+  display: block;
+  width: 90%;
+}
+
+/*======================================
 COMPONENTS
 ======================================*/
 /*=== Buttons ===*/
-/* line 51, ../scss/app.scss */
+/* line 85, ../scss/app.scss */
 a.primary_button {
   display: inline-block;
   background-color: #000;
@@ -1702,7 +1900,7 @@ a.primary_button {
 /*======================================
 HEADER
 ======================================*/
-/* line 64, ../scss/app.scss */
+/* line 98, ../scss/app.scss */
 .header_container {
   display: block;
   position: fixed;
@@ -1712,7 +1910,7 @@ HEADER
   width: 100%;
   background-color: transparent;
 }
-/* line 73, ../scss/app.scss */
+/* line 107, ../scss/app.scss */
 .header_container h1 {
   color: #f5f6f7;
 }
@@ -1720,8 +1918,8 @@ HEADER
 /*======================================
 CHOOSE YOUR ACT
 ======================================*/
-/* line 82, ../scss/app.scss */
-video#bgvid {
+/* line 116, ../scss/app.scss */
+video#cya_bgvid {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -1730,14 +1928,13 @@ video#bgvid {
   width: auto;
   height: auto;
   z-index: -100;
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -ms-transform: translateX(-50%) translateY(-50%);
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
+  background: url(polina.jpg) no-repeat;
   background-size: cover;
 }
 
-/* line 96, ../scss/app.scss */
+/* line 131, ../scss/app.scss */
 .intro_container {
   display: block;
   position: absolute;
@@ -1747,18 +1944,18 @@ video#bgvid {
   padding: 0px 200px;
   z-index: 99;
 }
-/* line 105, ../scss/app.scss */
+/* line 140, ../scss/app.scss */
 .intro_container h1 {
   color: #000000;
 }
-/* line 109, ../scss/app.scss */
+/* line 144, ../scss/app.scss */
 .intro_container p {
   font-size: 30px;
   line-height: 38px;
   color: #f5f6f7;
 }
 
-/* line 116, ../scss/app.scss */
+/* line 151, ../scss/app.scss */
 .intros {
   position: fixed;
   top: 0;
@@ -1766,14 +1963,14 @@ video#bgvid {
   display: block;
   height: 100%;
 }
-/* line 123, ../scss/app.scss */
+/* line 158, ../scss/app.scss */
 .intros .intro_left {
   width: 50%;
   left: 0;
   height: 100%;
   position: absolute;
 }
-/* line 129, ../scss/app.scss */
+/* line 164, ../scss/app.scss */
 .intros .intro_left:before {
   content: "";
   position: absolute;
@@ -1784,14 +1981,14 @@ video#bgvid {
   height: 100%;
   display: block;
 }
-/* line 134, ../scss/app.scss */
+/* line 169, ../scss/app.scss */
 .intros .intro_right {
   width: 50%;
   right: 0;
   height: 100%;
   position: absolute;
 }
-/* line 140, ../scss/app.scss */
+/* line 175, ../scss/app.scss */
 .intros .intro_right:before {
   content: "";
   position: absolute;
@@ -1804,9 +2001,32 @@ video#bgvid {
 }
 
 /*======================================
+INTRO VIDEO
+======================================*/
+/* line 185, ../scss/app.scss */
+.fullscreen-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -100;
+}
+
+/* line 195, ../scss/app.scss */
+#bgvid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*======================================
 CHOOSE YOUR STORY
 ======================================*/
-/* line 150, ../scss/app.scss */
+/* line 211, ../scss/app.scss */
 .cys_split_container {
   position: relative;
   overflow-x: hidden;
@@ -1814,7 +2034,7 @@ CHOOSE YOUR STORY
   width: 100%;
 }
 
-/* line 157, ../scss/app.scss */
+/* line 218, ../scss/app.scss */
 .cys_side {
   height: 100%;
   position: fixed;
@@ -1822,7 +2042,7 @@ CHOOSE YOUR STORY
   background-size: cover;
   background-position: 60% 0;
 }
-/* line 164, ../scss/app.scss */
+/* line 225, ../scss/app.scss */
 .cys_side a {
   display: block;
   position: absolute;
@@ -1832,12 +2052,13 @@ CHOOSE YOUR STORY
   height: 100%;
   z-index: 9999;
 }
-/* line 174, ../scss/app.scss */
+/* line 235, ../scss/app.scss */
 .cys_side.cys_he_container {
   width: 50%;
   left: 0;
+  background-image: url("../img/he_intro.jpg");
 }
-/* line 178, ../scss/app.scss */
+/* line 240, ../scss/app.scss */
 .cys_side.cys_he_container:before {
   content: "";
   position: absolute;
@@ -1853,12 +2074,13 @@ CHOOSE YOUR STORY
   transition: all 0.5s ease-in-out;
   z-index: 99;
 }
-/* line 185, ../scss/app.scss */
+/* line 247, ../scss/app.scss */
 .cys_side.cys_she_container {
   width: 50%;
   right: 0;
+  background-image: url("../img/she_intro.jpg");
 }
-/* line 189, ../scss/app.scss */
+/* line 252, ../scss/app.scss */
 .cys_side.cys_she_container:before {
   content: "";
   position: absolute;
@@ -1875,14 +2097,14 @@ CHOOSE YOUR STORY
   z-index: 99;
 }
 
-/* line 199, ../scss/app.scss */
+/* line 262, ../scss/app.scss */
 .cys_he_container img, .cys_she_container img {
   display: block;
   width: 100%;
   height: 100%;
 }
 
-/* line 207, ../scss/app.scss */
+/* line 270, ../scss/app.scss */
 .cys_text_overlay {
   position: absolute;
   top: 40%;
@@ -1892,7 +2114,7 @@ CHOOSE YOUR STORY
   padding: 0px 50px;
   z-index: 999;
 }
-/* line 216, ../scss/app.scss */
+/* line 279, ../scss/app.scss */
 .cys_text_overlay p {
   position: relative;
   top: 20px;
@@ -1904,7 +2126,7 @@ CHOOSE YOUR STORY
   transition: all 0.5s ease-in-out;
 }
 
-/* line 225, ../scss/app.scss */
+/* line 288, ../scss/app.scss */
 .cys_he_container:hover:before {
   content: "";
   position: absolute;
@@ -1915,14 +2137,14 @@ CHOOSE YOUR STORY
   height: 100%;
   display: block;
 }
-/* line 229, ../scss/app.scss */
+/* line 292, ../scss/app.scss */
 .cys_he_container:hover .cys_text_overlay p {
   top: 0px;
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
 
-/* line 236, ../scss/app.scss */
+/* line 299, ../scss/app.scss */
 .cys_she_container:hover:before {
   content: "";
   position: absolute;
@@ -1933,7 +2155,7 @@ CHOOSE YOUR STORY
   height: 100%;
   display: block;
 }
-/* line 239, ../scss/app.scss */
+/* line 302, ../scss/app.scss */
 .cys_she_container:hover .cys_text_overlay p {
   top: 0px;
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
@@ -1941,11 +2163,11 @@ CHOOSE YOUR STORY
 }
 
 /*=== Flexslider ===*/
-/* line 249, ../scss/app.scss */
+/* line 312, ../scss/app.scss */
 .cys_split_container .flexslider {
   height: 100%;
 }
-/* line 253, ../scss/app.scss */
+/* line 316, ../scss/app.scss */
 .cys_split_container ul.slides {
   margin: 0px;
   left: 0;
@@ -1955,7 +2177,7 @@ CHOOSE YOUR STORY
   height: 100%;
   width: 100%;
 }
-/* line 262, ../scss/app.scss */
+/* line 325, ../scss/app.scss */
 .cys_split_container ul.slides li {
   background-size: cover !important;
   height: 100%;

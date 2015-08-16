@@ -2,6 +2,10 @@
 @import "compass";
 @import "_variables.scss";
 @import "_mixins.scss";
+
+// Components
+@import "_messages.scss";
+
 // @import "foundation";
 
 // Or selectively include components
@@ -43,6 +47,36 @@
 //   "foundation/components/visibility";
 
 /*======================================
+MENU
+======================================*/
+
+.toggle_panel {
+    position: absolute;
+    width: 10%;
+    right: 0;
+    height: 100%;
+    background-color: #000;
+    cursor: pointer;
+
+    h2 {
+	    top: 40%;
+	    position: relative;
+	    width: 100%;
+	    text-align: center;
+	    color: #fff;
+	}
+}
+
+/*======================================
+MAIN SCREEN
+======================================*/
+
+.main_screen_container {
+	display: block;
+	width: 90%;
+}
+
+/*======================================
 COMPONENTS
 ======================================*/
 
@@ -79,7 +113,7 @@ HEADER
 CHOOSE YOUR ACT
 ======================================*/
 
-video#bgvid {
+video#cya_bgvid {
 	position: fixed;
 	top: 50%;
 	left: 50%;
@@ -88,8 +122,9 @@ video#bgvid {
 	width: auto;
 	height: auto;
 	z-index: -100;
-	@include transform(translateX(-50%) translateY(-50%));
-	// background: url(polina.jpg) no-repeat;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+	background: url(polina.jpg) no-repeat;
 	background-size: cover;
 }
 
@@ -144,8 +179,34 @@ video#bgvid {
 }
 
 /*======================================
+INTRO VIDEO
+======================================*/
+
+.fullscreen-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;
+}
+
+#bgvid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/*======================================
 CHOOSE YOUR STORY
 ======================================*/
+
+#choose_your_story {
+
+}
 
 .cys_split_container {
     position: relative;
@@ -174,6 +235,7 @@ CHOOSE YOUR STORY
 	&.cys_he_container {
 		width: 50%;
 		left: 0;
+		background-image: url('../img/he_intro.jpg');
 
 		&:before {
 			@include overlay(rgba(68,135,199,1));
@@ -185,6 +247,7 @@ CHOOSE YOUR STORY
 	&.cys_she_container {
 		width: 50%;
 		right: 0;
+		background-image: url('../img/she_intro.jpg');
 
 		&:before {
 			@include overlay(rgba(235,93,75,1));
