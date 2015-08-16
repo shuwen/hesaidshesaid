@@ -33,7 +33,18 @@ var Message = React.createClass({
 
 		return (
 			<div className={'message '+(this.props.self ? 'self' : 'default')}>
+				{!this.props.self ? (<div className="avatar">
+					<img src={this.props.avatar} />
+					<i>{this.props.sender}</i>
+				</div>) : <b></b> }
+
 				<span className="bubble">{messageContent}</span>
+
+				{this.props.self ? (<div className="avatar">
+					<img src={this.props.avatar} />
+					<i>{this.props.sender}</i>
+				</div>) : <b></b>}
+
 			</div>
 		);
 	}
@@ -107,7 +118,7 @@ var Messenger = React.createClass({
 					{this.state.messages.map(function(message) {
 						return (
 							// <Avatar url={message.user.avatarURL}></Avatar>
-							<Message host={host} message={message.message} contentType={message.contentType} self={message.self} callback={message.callback}></Message>
+							<Message sender={message.sender} avatar={message.avatar} host={host} message={message.message} contentType={message.contentType} self={message.self} callback={message.callback}></Message>
 						);
 					})}
 					<div id="indicator" className="message indicator" hidden={this.state.inputBuffer === ''}>
@@ -134,7 +145,10 @@ var Messenger = React.createClass({
 			this.post({
 				message: this.state.inputBuffer,
 				contentType: 'text',
-				self: true}, true, this.state.answerCallback);
+				self: true,
+				avatar: '../../img/narrator_icon_chat.png',
+				sender: 'You',
+			}, true, this.state.answerCallback);
 
 			if(this.questionBuffer) {
 				this.setState({
@@ -155,18 +169,20 @@ var Messenger = React.createClass({
 		this.setState({inputBuffer: e.target.value});
 	},
 
-	post: function(message, contentType, self, suppressSound, callback) {
+	post: function(message, callback, contentType, self, avatar, sender, suppressSound) {
 		var newPost;
 		if(typeof message === 'object') {
 			newPost = message;
 			suppressSound = contentType;
-			message.callback = self;
+			message.callback = callback;
 		}
 		else {
 			newPost = {
 				message: message,
 				contentType: contentType,
 				self: self,
+				avatar: avatar,
+				sender: sender,
 				callback: callback
 			}
 		}
@@ -182,7 +198,10 @@ var Messenger = React.createClass({
 	prompt: function(question,callback) {
 		this.post({
 			message: question,
-			contentType: 'text'
+			contentType: 'text',
+			avatar: '../../img/narrator_icon_chat.png',
+			sender: 'Narrator',
+			self: false
 		});
 		this.showInput();
 		this.questionBuffer = question;
