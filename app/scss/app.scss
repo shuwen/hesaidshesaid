@@ -50,10 +50,9 @@
 FONTS
 ======================================*/
 
-p, h1, h2, h3 {
+body, p, h1, h2, h3 {
   font-family: "proxima-nova",sans-serif;
 }
-
 
 p {
 	font-weight: 400;
@@ -184,6 +183,7 @@ HEADER
     text-align: center;
     width: 100%;
     background-color: rgba($black, 0);
+    margin-left: 6px;
     @include opaque();
     @include transition(opacity 1s ease-in-out);
 
@@ -252,7 +252,7 @@ video#cya_bgvid {
 		position: absolute;
 
 		&:before {
-			@include overlay(rgba(68,135,199,.4));
+			@include overlay(rgba(68,135,199,.6));
 		}
 	}
 
@@ -263,7 +263,7 @@ video#cya_bgvid {
 		position: absolute;
 
 		&:before {
-			@include overlay(rgba(235,93,75,.4));
+			@include overlay(rgba(235,93,75,.6));
 		}
 	}
 }
@@ -345,6 +345,7 @@ div#choose_your_story.move_down {
 		left: 0;
 		background-image: url('../img/he_intro.jpg');
 		z-index: 9999;
+		cursor: pointer;
 
 		&:before {
 			@include overlay(rgba(68,135,199,1));
@@ -358,6 +359,7 @@ div#choose_your_story.move_down {
 		right: 0;
 		background-image: url('../img/she_intro.jpg');
 		z-index: 9999;
+		cursor: pointer;
 
 		&:before {
 			@include overlay(rgba(235,93,75,1));
