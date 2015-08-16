@@ -80,35 +80,60 @@
         var host = this.props.host;
         audioNode.addEventListener('play', function() {
           console.log("You're playing audio");
-          host.setBackgroundImage("linear-gradient(rgba(0,0,187,.50),rgba(0,0,187,.50)), url('/img/NumberEx3.jpeg')");
+          host.setBackgroundImage("linear-gradient(rgba(0,0,187,.50),rgba(0,0,187,.50)), url('img/NumberEx3.jpeg')");
+          firstMessage.dropMessage();
         });
 
         audioNode.addEventListener('ended', function() {
           document.querySelector('.cys_she_container').classList.add('animated');
+          sueMessenger.post({
+            message: 'https://raw.githubusercontent.com/tholman/elevator.js/master/demo/music/elevator.mp3',
+            contentType: 'audio',
+            self: false
+          }, true, firstSueMessageCallback);
         });
       }
+
+      var firstSueMessageCallback = function() {
+        var audioNode = this.getDOMNode().querySelector('audio');
+        audioNode.addEventListener('ended', function() {
+          flipToJohn();
+        });
+      };
+      var firstJohnMessage;
+      var interval=1000;
+
+      var flipToJohn = function() {
+        $("#john_message_container").show();
+        $("#sue_message_container").hide();
+        $("body").removeClass("she_toggled").addClass("he_toggled");
+        johnMessenger.clear();
+        setTimeout(function() { johnMessenger.post("Sue"); }, 0);
+        setTimeout(function() { johnMessenger.post("John","text",true); }, interval*1);
+        setTimeout(function() { johnMessenger.post("Jon?","text",true); }, interval*2);
+        setTimeout(function() { johnMessenger.post("Ha. John. If I don't see you again for the rest of the night, your lips will still be the only thing on my mind."); }, interval*3);
+        setTimeout(function() {
+          johnMessenger.post({
+            message: "johnurl3",
+            contentType: 'audio',
+            self: false,
+          })
+        },interval*4)
+      };
 
       johnMessenger.post({
         message: 'At the time of meeting he was in an open relationship.',
         contentType: 'text',
         self: false
-      }, true);
+      }, true, function() {
+        firstJohnMessage = this;
+      });
+
       johnMessenger.post({
         message: 'https://raw.githubusercontent.com/tholman/elevator.js/master/demo/music/elevator.mp3',
         contentType: 'audio',
         self: false
       }, true, johnFirstAlert);
-
-      sueMessenger.post({
-        message: 'At the time of meeting he was in an open relationship. this is the other one',
-        contentType: 'text',
-        self: false
-      }, true);
-       sueMessenger.post({
-        message: 'https://raw.githubusercontent.com/tholman/elevator.js/master/demo/music/elevator.mp3',
-        contentType: 'audio',
-        self: false
-      }, true, function(){});
 
     </script>
   </body>

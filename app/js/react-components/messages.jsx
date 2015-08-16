@@ -1,4 +1,8 @@
 var Message = React.createClass({
+	dropMessage: function() {
+		$( this.getDOMNode() ).remove();
+	},
+
 	componentDidMount: function() {
 		if(this.props.callback) this.props.callback.apply(this);
 	},
@@ -37,8 +41,10 @@ var Message = React.createClass({
 var Messenger = React.createClass({
 	mixins: [React.addons.LinkedStateMixin],
 
-	scrollOut: function() {
-
+	clear: function() {
+		this.setState({
+			messages: []
+		});
 	},
 
 	componentDidMount: function() {
