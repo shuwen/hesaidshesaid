@@ -2352,12 +2352,65 @@ div#choose_your_story.move_down {
   display: block;
 }
 
+/*=== Animate Header ===*/
+/* line 419, ../scss/app.scss */
+.cys_she_container.animated:before {
+  -webkit-animation: header_color_notification 1s infinite ease-in-out;
+  -moz-animation: header_color_notification 1s infinite ease-in-out;
+  -o-animation: header_color_notification 1s infinite ease-in-out;
+  animation: header_color_notification 1s infinite ease-in-out;
+}
+
+@-webkit-keyframes header_color_notification {
+  0% {
+    background: #eb5d4b;
+  }
+  50% {
+    background: rgba(204, 204, 204, 0.8);
+  }
+  100% {
+    background: #cccccc;
+  }
+}
+@-moz-keyframes header_color_notification {
+  0% {
+    background: #eb5d4b;
+  }
+  50% {
+    background: rgba(204, 204, 204, 0.8);
+  }
+  100% {
+    background: #cccccc;
+  }
+}
+@-ms-keyframes header_color_notification {
+  0% {
+    background: #eb5d4b;
+  }
+  50% {
+    background: rgba(204, 204, 204, 0.8);
+  }
+  100% {
+    background: #cccccc;
+  }
+}
+@keyframes header_color_notification {
+  0% {
+    background: #eb5d4b;
+  }
+  50% {
+    background: rgba(204, 204, 204, 0.8);
+  }
+  100% {
+    background: #cccccc;
+  }
+}
 /*=== Flexslider ===*/
-/* line 420, ../scss/app.scss */
+/* line 433, ../scss/app.scss */
 .cys_split_container .flexslider {
   height: 100%;
 }
-/* line 424, ../scss/app.scss */
+/* line 437, ../scss/app.scss */
 .cys_split_container ul.slides {
   margin: 0px;
   left: 0;
@@ -2367,7 +2420,7 @@ div#choose_your_story.move_down {
   height: 100%;
   width: 100%;
 }
-/* line 433, ../scss/app.scss */
+/* line 446, ../scss/app.scss */
 .cys_split_container ul.slides li {
   background-size: cover !important;
   height: 100%;

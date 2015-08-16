@@ -413,6 +413,19 @@ div#choose_your_story.move_down {
 	@include overlay(rgba(204,204,204,1));
 }
 
+
+/*=== Animate Header ===*/
+
+.cys_she_container.animated:before {
+	@include animation(header_color_notification 1s infinite ease-in-out);
+}
+
+@include keyframes('header_color_notification') {
+	0% {background: rgba(235,93,75,1);}
+	50% {background: rgba(204,204,204,.8);}
+	100% {background: rgba(204,204,204,1);}
+}
+
 /*=== Flexslider ===*/
 
 .cys_split_container {

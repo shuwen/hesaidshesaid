@@ -19,7 +19,7 @@ $(document).ready(function() {
 		$('#choose_your_story').addClass('header_transform');
 		$('.fullscreen-bg').addClass('hide');
 		$('.cys_he_container').addClass('header_transform');
-		$('.cys_she_container').addClass('header_transform');
+		$('.cys_she_container').addClass('header_transform animated');
 		$('.header_container').addClass('fadeOut');
 		$('.main_screen_container').addClass('show');
 		$('this').addClass('new_header_click');
