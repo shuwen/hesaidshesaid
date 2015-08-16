@@ -66,11 +66,14 @@
         <Messenger id="messenger"></Messenger>,
         document.getElementById('message_container')
       );
-      // messenger.setBackground('rgba(0,0,177,.25)');
 
-      var postAlert = function() {
-        console.log('it worked');
-        console.log(this);
+      var audioAlert = function() {
+        var audioNode = this.getDOMNode().querySelector('audio');
+        var host = this.props.host;
+        audioNode.addEventListener('play', function() {
+          console.log("You're playing audio");
+          host.setBackground('orange');
+        });
       }
 
       messenger.post({
@@ -82,7 +85,7 @@
         message: 'https://raw.githubusercontent.com/tholman/elevator.js/master/demo/music/elevator.mp3',
         contentType: 'audio',
         self: false
-      }, true, postAlert);
+      }, true, audioAlert);
     </script>
   </body>
 </html>
