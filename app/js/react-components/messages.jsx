@@ -1,6 +1,8 @@
 var Message = React.createClass({
 	dropMessage: function() {
-		$( this.getDOMNode() ).remove();
+		this.setState({
+			// hidden: 
+		})
 	},
 
 	componentDidMount: function() {
@@ -129,7 +131,10 @@ var Messenger = React.createClass({
 	handleSubmit: function(e) {
 		e.preventDefault();
 		if(this.state.inputBuffer) {
-			this.post(this.state.inputBuffer, 'text', true);
+			this.post({
+				message: this.state.inputBuffer,
+				contentType: 'text',
+				self: true}, true, this.state.answerCallback);
 
 			if(this.questionBuffer) {
 				this.setState({
@@ -165,7 +170,7 @@ var Messenger = React.createClass({
 				callback: callback
 			}
 		}
-		var notifSound = new Audio('/audio/TextSFX_3.mp3');
+		var notifSound = new Audio('../../audio/TextSFX_3.mp3');
 
 		this.setState({
 			messages: this.state.messages.concat([newPost])
@@ -174,13 +179,16 @@ var Messenger = React.createClass({
 		if(!suppressSound) notifSound.play();
 	},
 
-	prompt: function(question) {
+	prompt: function(question,callback) {
 		this.post({
 			message: question,
 			contentType: 'text'
 		});
 		this.showInput();
 		this.questionBuffer = question;
+		this.setState({
+			answerCallback: callback
+		});
 	},
 
 	toggleInput: function() {

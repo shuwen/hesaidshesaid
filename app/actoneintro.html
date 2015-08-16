@@ -94,7 +94,7 @@
         audioNode.addEventListener('play', function() {
           console.log("You're playing audio");
           host.setBackgroundImage("linear-gradient(rgba(0,0,187,.50),rgba(0,0,187,.50)), url('img/NumberEx3.jpeg')");
-          firstMessage.dropMessage();
+          // firstJohnMessage.dropMessage();
         });
 
         audioNode.addEventListener('ended', function() {
@@ -103,12 +103,13 @@
             message: 'https://raw.githubusercontent.com/tholman/elevator.js/master/demo/music/elevator.mp3',
             contentType: 'audio',
             self: false
-          }, true, firstSueMessageCallback);
+          }, false, firstSueMessageCallback);
         });
       }
 
       var firstSueMessageCallback = function() {
         var audioNode = this.getDOMNode().querySelector('audio');
+        audioNode.play();
         audioNode.addEventListener('ended', function() {
           flipToJohn();
         });
@@ -124,24 +125,28 @@
         setTimeout(function() { johnMessenger.post("Sue"); }, 0);
         setTimeout(function() { johnMessenger.post("John","text",true); }, interval*1);
         setTimeout(function() { johnMessenger.post("Jon?","text",true); }, interval*2);
-        setTimeout(function() { johnMessenger.post("Ha. John. If I don't see you again for the rest of the night, your lips will still be the only thing on my mind."); }, interval*3);
+        setTimeout(function() { johnMessenger.post("Ha. John. If I don't see you again for the rest of the night, your lips will still be the only thing on my mind."); }, interval*4);
         setTimeout(function() {
           johnMessenger.post({
             message: "johnurl3",
             contentType: 'audio',
             self: false,
           })
-        },interval*4)
-        setTimeout(function() {
-          johnMessenger.prompt("What are YOUR feelings?");
         },interval*5);
+        setTimeout(function() {
+          johnMessenger.prompt("What are YOUR feelings?", function() {
+            setTimeout(nightCapScript,1000);
+          });
+        },interval*6);
+
+        // setTimeout(function() {  }, interval*7);
       };
 
       johnMessenger.post({
         message: 'At the time of meeting he was in an open relationship.',
         contentType: 'text',
         self: false
-      }, true, function() {
+      }, false, function() {
         firstJohnMessage = this;
       });
 
@@ -149,7 +154,15 @@
         message: 'https://raw.githubusercontent.com/tholman/elevator.js/master/demo/music/elevator.mp3',
         contentType: 'audio',
         self: false
-      }, true, johnFirstAlert);
+      }, false, johnFirstAlert);
+
+      var nightCapScript = function() {
+        johnMessenger.clear();
+        setTimeout(function() { johnMessenger.post("Hope you got home safe. I'm going to wake up thinking about what a dope breakfast I'm going to make us next time when you actually let me take you home. :)")}, interval*2);
+        setTimeout(function() {
+          johnMessenger.prompt("How do you think she will respond?", interval*3, handleResponsePrompt);
+        })
+      };
     </script>
   </body>
 </html>
