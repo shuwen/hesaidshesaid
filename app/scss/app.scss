@@ -47,24 +47,69 @@
 //   "foundation/components/visibility";
 
 /*======================================
-MENU
+HEADER
 ======================================*/
 
-.toggle_panel {
-    position: absolute;
-    width: 10%;
-    right: 0;
-    height: 100%;
-    background-color: #000;
-    cursor: pointer;
+.header {
+  display: block;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+  box-shadow: 0px 1px 5px #333333;
+}
 
-    h2 {
-	    top: 40%;
-	    position: relative;
-	    width: 100%;
-	    text-align: center;
-	    color: #fff;
+.he_toggled {
+
+	.she_said_header {
+		opacity: .5;
+		@include transition(all .5s ease-in-out);
 	}
+
+	.main_screen_container {
+		background-color: rgba($blue, .5);
+		@include transition(all .5s ease-in-out);
+	}
+
+}
+
+.she_toggled {
+
+	.he_said_header {
+		opacity: .5;
+		@include transition(all .5s ease-in-out);
+	}
+
+	.main_screen_container {
+		background-color: rgba($red, .5);
+		@include transition(all .5s ease-in-out);
+	}
+
+}
+
+.header h1 {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.he_said_header {
+  text-align: right;
+  background: #4487c7;
+  cursor: pointer;
+}
+
+.she_said_header {
+  text-align: left;
+  background: #eb5d4b;
+  cursor: pointer;
+}
+
+.he_said_header, .she_said_header {
+  display: block;
+  width: 50%;
+  float: left;
+  padding: 0px 20px
 }
 
 /*======================================
@@ -72,8 +117,9 @@ MAIN SCREEN
 ======================================*/
 
 .main_screen_container {
-	display: block;
-	width: 90%;
+    display: block;
+    top: 63px;
+    position: relative;
 }
 
 /*======================================
@@ -91,6 +137,10 @@ a.primary_button {
     text-transform: uppercase;
 }
 
+.hide {
+	display: none;
+}
+
 /*======================================
 HEADER
 ======================================*/
@@ -103,6 +153,12 @@ HEADER
     text-align: center;
     width: 100%;
     background-color: rgba($black, 0);
+    @include opaque();
+    @include transition(opacity 1s ease-in-out);
+
+    &.fadeOut {
+		@include transparent();
+	}
 
     h1 {
     	color: $white;
@@ -190,6 +246,11 @@ INTRO VIDEO
     left: 0;
     overflow: hidden;
     z-index: -100;
+    @include transition(all 1s ease-in-out);
+}
+
+.fullscreen-bg.move_down_vid {
+    bottom: -100%;
 }
 
 #bgvid {
@@ -204,8 +265,17 @@ INTRO VIDEO
 CHOOSE YOUR STORY
 ======================================*/
 
-#choose_your_story {
+div#choose_your_story {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-100%);
+    @include transition(all 1s ease-in-out);
+}
 
+div#choose_your_story.move_down {
+    transform: translateY(0%);
 }
 
 .cys_split_container {
@@ -221,6 +291,7 @@ CHOOSE YOUR STORY
 	top: 0;
 	background-size: cover;
 	background-position: 60% 0;
+	@include transition(height 1s ease-in-out);
 
 	a {
 	    display: block;
@@ -230,6 +301,10 @@ CHOOSE YOUR STORY
 	    width: 100%;
 	    height: 100%;
 	    z-index: 9999;
+	}
+
+	&.header_transform {
+		height: 10%;
 	}
 
 	&.cys_he_container {

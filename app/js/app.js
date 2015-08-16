@@ -4,9 +4,32 @@ $(document).foundation();
 
 $(document).ready(function() {
 
+	/*=== Move Intro Screen into He/She Select ===*/
+
 	$('#bgvid').on('ended',function() {    
 
-		$( "#choose_your_story" ).load( "chooseyourstory.html" );
+		$( "#choose_your_story" ).addClass("move_down");
+		$( ".fullscreen-bg" ).addClass("move_down_vid");
+
+	});
+
+	$('.cys_he_container').click(function() {
+		$('.cys_side').addClass('header_transform');
+		$('.fullscreen-bg').addClass('hide');
+		$('.header_container').addClass('fadeOut');
+	});
+
+	/*=== Toggle Body Class ===*/
+
+	$('.he_said_header').click(function() {
+
+		$("body").removeClass("she_toggled").addClass("he_toggled");
+
+	});
+
+	$('.she_said_header').click(function() {
+
+		$("body").removeClass("he_toggled").addClass("she_toggled");
 
 	});
 
