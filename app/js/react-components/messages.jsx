@@ -1,4 +1,8 @@
 var Message = React.createClass({
+	componentDidMount: function() {
+		if(this.props.callback) this.props.callback.apply(this);
+	},
+
 	render: function() {
 		var messageContent;
 		if(this.props.contentType === 'text')
@@ -33,12 +37,16 @@ var Message = React.createClass({
 var Messenger = React.createClass({
 	mixins: [React.addons.LinkedStateMixin],
 
+	scrollOut: function() {
+
+	},
+
 	componentDidMount: function() {
 	},
 
-	setBackground: function(background) {
+	setBackgroundImage: function(backgroundImage) {
 		this.setState({
-			background: background
+			backgroundImage: backgroundImage
 		});
 	},
 
@@ -56,7 +64,7 @@ var Messenger = React.createClass({
 
 	getInitialState: function() {
 		return {
-			background: '',			
+			backgroundImage: '',			
 			messages: [
 				// {message: 'Yo listen to this', contentType: 'text'},
 				// {message: 'https://raw.githubusercontent.com/tholman/elevator.js/master/demo/music/elevator.mp3', contentType: 'audio'},
@@ -71,8 +79,10 @@ var Messenger = React.createClass({
 
 	render: function() {
 		var containerStyle = {
-			background: this.state.background
+			backgroundImage: this.state.backgroundImage
 		}
+
+		var host = this;
 
 		return (
 			<div style={containerStyle} className="messenger">
@@ -81,7 +91,7 @@ var Messenger = React.createClass({
 					{this.state.messages.map(function(message) {
 						return (
 							// <Avatar url={message.user.avatarURL}></Avatar>
-							<Message message={message.message} contentType={message.contentType} self={message.self}></Message>
+							<Message host={host} message={message.message} contentType={message.contentType} self={message.self} callback={message.callback}></Message>
 						);
 					})}
 					<div id="indicator" className="message indicator" hidden={this.state.inputBuffer === ''}>
@@ -130,18 +140,17 @@ var Messenger = React.createClass({
 		if(typeof message === 'object') {
 			newPost = message;
 			suppressSound = contentType;
-			callback = self;
+			message.callback = self;
 		}
 		else {
 			newPost = {
 				message: message,
 				contentType: contentType,
-				self: self
+				self: self,
+				callback: callback
 			}
 		}
 		var notifSound = new Audio('/audio/TextSFX_3.mp3');
-
-		if(callback) callback.apply(this, []);
 
 		this.setState({
 			messages: this.state.messages.concat([newPost])

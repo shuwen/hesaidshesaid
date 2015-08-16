@@ -66,10 +66,14 @@
         <Messenger id="messenger"></Messenger>,
         document.getElementById('message_container')
       );
-      // messenger.setBackground('rgba(0,0,177,.25)');
 
-      var postAlert = function() {
-        console.log('it worked');
+      var audioAlert = function() {
+        var audioNode = this.getDOMNode().querySelector('audio');
+        var host = this.props.host;
+        audioNode.addEventListener('play', function() {
+          console.log("You're playing audio");
+          host.setBackgroundImage("linear-gradient(rgba(0,0,187,.50),rgba(0,0,187,.50)), url('https://photos-4.dropbox.com/t/2/AABnRBQttgaK9R568fWet_sxM0U7oBEwlJolGZg_NwdHUg/12/456664817/jpeg/32x32/1/_/1/2/NumberEx3.jpeg/ELCfvNgDGEIgBygH/UMN2SrZsu6Hbon_hQnZmXqOaxSqgoKgmDpUjmyVLqLI?size=1024x768&size_mode=2')");
+        });
       }
 
       messenger.post({
@@ -81,7 +85,7 @@
         message: 'https://raw.githubusercontent.com/tholman/elevator.js/master/demo/music/elevator.mp3',
         contentType: 'audio',
         self: false
-      }, true, postAlert);
+      }, true, audioAlert);
     </script>
   </body>
 </html>
