@@ -194,7 +194,7 @@ video#cya_bgvid {
     z-index: 99;
 
     h1 {
-    	color: $black;
+    	color: $white;
     }
 
     p {
@@ -350,6 +350,7 @@ div#choose_your_story.move_down {
     text-align: center;
     padding: 0px 50px;
     z-index: 999;
+    @include transition(top 1s ease-in-out);
 
     p {
     	position: relative;
@@ -357,6 +358,10 @@ div#choose_your_story.move_down {
     	@include transparent();
     	@include transition(all .5s ease-in-out);
     }
+}
+
+.header_transform .cys_text_overlay {
+	top: 0%;
 }
 
 .cys_he_container:hover {
@@ -378,6 +383,10 @@ div#choose_your_story.move_down {
 		top: 0px;
 		@include opaque();
 	}
+}
+
+.cys_side.header_transform.cys_she_container:before {
+	@include overlay(rgba(204,204,204,1));
 }
 
 /*=== Flexslider ===*/
