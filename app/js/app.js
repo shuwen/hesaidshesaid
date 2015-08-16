@@ -16,11 +16,31 @@ $(document).ready(function() {
 	}); */
 
 	$('.cys_he_container').click(function() {
-		$('.cys_side').addClass('header_transform');
 		$('#choose_your_story').addClass('header_transform');
 		$('.fullscreen-bg').addClass('hide');
+		$('.cys_he_container').addClass('header_transform');
+		$('.cys_she_container').addClass('header_transform');
 		$('.header_container').addClass('fadeOut');
 		$('.main_screen_container').addClass('show');
+		$('this').addClass('new_header_click');
+	});
+	
+	$('.cys_he_container').click(function() {
+
+		if ($("#choose_your_story").hasClass("header_transform")) {
+
+			$("body").removeClass("she_toggled").addClass("he_toggled");
+		}
+
+	});
+
+	$('.cys_she_container').click(function() {
+
+		if ($("#choose_your_story").hasClass("header_transform")) {
+
+			$("body").removeClass("he_toggled").addClass("she_toggled");
+		}
+
 	});
 
 	/*=== Toggle Body Class ===*/

@@ -163,7 +163,7 @@ HEADER
     display: block;
     position: fixed;
     top: 0;
-    z-index: 99;
+    z-index: 99999;
     text-align: center;
     width: 100%;
     background-color: rgba($black, 0);
@@ -172,6 +172,7 @@ HEADER
 
     &.fadeOut {
 		@include transparent();
+		z-index: 99;
 	}
 
     h1 {
@@ -324,6 +325,7 @@ div#choose_your_story.move_down {
 		width: 50%;
 		left: 0;
 		background-image: url('../img/he_intro.jpg');
+		z-index: 9999;
 
 		&:before {
 			@include overlay(rgba(68,135,199,1));
@@ -336,6 +338,7 @@ div#choose_your_story.move_down {
 		width: 50%;
 		right: 0;
 		background-image: url('../img/she_intro.jpg');
+		z-index: 9999;
 
 		&:before {
 			@include overlay(rgba(235,93,75,1));
@@ -375,6 +378,10 @@ div#choose_your_story.move_down {
 
 .header_transform .cys_text_overlay {
 	top: 0%;
+
+	p {
+		display: none;
+	}
 }
 
 .cys_he_container:hover {
@@ -396,6 +403,10 @@ div#choose_your_story.move_down {
 		top: 0px;
 		@include opaque();
 	}
+}
+
+.cys_side.header_transform.cys_he_container:before {
+	@include overlay(rgba(68,135,199,1));
 }
 
 .cys_side.header_transform.cys_she_container:before {
